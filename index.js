@@ -7,7 +7,7 @@ const fs = require('fs');
 
 var DIR = "./server/public/images/";
 
-const api = require("./routes/api");
+const api = require("./server/routes/api");
 
 /**
  * Server config
@@ -41,7 +41,7 @@ function routerConfig() {
   // app.use('/static', express.static(path.join(__dirname, 'public')));
 
   // Send all requests to index.html
-  app.get("/*", function(_, res) {
+  app.get("/*", function(req, res) {
     res.sendFile(path.join(__dirname + "/dist/SantuarioNatura/index.html"));
   });
 
