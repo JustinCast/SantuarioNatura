@@ -44,7 +44,7 @@
   <hr>
   <ngb-carousel class="text-center shadowm-lg m-auto" *ngIf="activity.images && activity.images.length > 0">
     <ng-template ngbSlide *ngFor="let img of activity.images">
-      <img src="http://localhost:5000/static/images/{{img.filename}}" width="auto" height="auto" class="container imgCarousel" >
+      <img src="static/images/{{img.filename}}" width="auto" height="auto" class="container imgCarousel" >
       <div class="container text-right">
         <button mat-button color="warn" (click)="deleteImage(img);"><mat-icon>delete</mat-icon></button>
       </div>

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./app/ui-utils/variables";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+.align {
+  vertical-align: top;
+}
+
+.dialog .mat-dialog-container {
+  border-radius: 10px;
+  padding-bottom: 0;
+}
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

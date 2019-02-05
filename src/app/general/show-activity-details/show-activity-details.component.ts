@@ -14,12 +14,12 @@ import { Activity } from "src/app/models/Activity";
 export class ShowActivityDetailsComponent implements OnInit {
   activity: Activity;
   constructor(
-    private _activity: ActivityService,
+    public _activity: ActivityService,
     private route: ActivatedRoute,
     private _im: ImageService,
     private _router: Router,
     private _dialog: DialogManager,
-    private _ratesService: RatesService
+    public _ratesService: RatesService
   ) {}
 
   ngOnInit() {
