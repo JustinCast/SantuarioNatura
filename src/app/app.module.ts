@@ -7,7 +7,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '../../node_modules/@angular/common/http';
 import { RouterModule } from "@angular/router";
-//Modules
+
 import { AdminModule } from './admin/admin.module';
 import { ROUTES } from './app.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
