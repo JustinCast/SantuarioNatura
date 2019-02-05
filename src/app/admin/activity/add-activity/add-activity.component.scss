@@ -1,0 +1,30 @@
+@import '../../../ui-utils/variables';
+
+form {
+  width: 65%;
+  margin: auto;
+  padding: 2%;
+  background-color: $secondary-color;
+  margin: 5% auto 5% auto;
+}
+mat-form-field {
+  width: 90%;
+  margin: auto;
+}
+ngb-carousel {
+  height: 2%;
+}
+img {
+  height: 10%;
+}
+#loading {
+  margin-top: 25%;
+}
+#map {
+  width: 90%;
+  height: 480px;
+} 
+
+h4{
+  color: $accent-color;
+}

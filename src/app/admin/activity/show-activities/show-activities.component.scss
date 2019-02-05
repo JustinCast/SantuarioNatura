@@ -1,0 +1,58 @@
+@import '../../../ui-utils/variables';
+
+#activities-container {
+  list-style-type: none;
+  padding: 0;
+  width: 50%;
+}
+.activity {
+  padding-top: 1%;
+  margin-bottom: 1%;
+}
+#footer-list {
+  list-style-type: none;
+  padding: 0;
+}
+.footer-li {
+  display: inline-block;
+}
+#loading {
+  margin-top: 25%;
+}
+#details{
+  width: 90%;
+  list-style-type: none;
+}
+.detail{
+  width: 100%;
+}
+mat-progress-bar{
+  width: 50%;
+  margin: auto auto 5% auto;
+}
+
+mat-progress-bar{
+  width: 50%;
+  margin: auto auto 5% auto;
+}
+
+h5{
+  text-align: center;
+  margin: 24% auto 1% auto;
+}
+
+#activity-card{
+  background-color: $secondary-color;
+  margin: 2% auto 2% auto;
+}
+h4{
+  color: $accent-color;
+}
+
+li,p{
+  text-align: center;
+}
+
+.icon-color{
+  color: $accent-color;
+}

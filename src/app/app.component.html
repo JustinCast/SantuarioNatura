@@ -1,20 +1,96 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<mat-drawer-container class="example-container" hasBackdrop="true">
+  <mat-drawer style="background-color: rgb(255, 200, 37)" #drawer mode="over">
+    <mat-accordion class="example-headers-align">
+      <div class="container text-center">
+        <img id="admin-brand" src="../assets/images/LOGO FONDO BLANCO.png" alt="SantuarioNatura">
+      </div>
+      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            {{'ManageUsers' | translate}}
+            <mat-icon>account_box</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <button mat-stroked-button color="primary" (click)="drawer.close()" [routerLink]="['/admin/add-user']" >{{'Add' | translate}}</button>
+        <button class="ml-4" mat-stroked-button color="accent" (click)="drawer.close()" [routerLink]="['/admin/show-users']" >{{'Show' | translate}}</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            {{'ManageActivities' | translate}}
+            <mat-icon>rowing</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <button mat-stroked-button color="primary" (click)="drawer.close()" [routerLink]="['/admin/add-activity']" >{{'Add' | translate}}</button>
+        <button class="ml-4" mat-stroked-button color="accent" (click)="drawer.close()" [routerLink]="['/admin/show-activities']" >{{'Show' | translate}}</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            {{'ManageComments' | translate}}
+            <mat-icon>comment</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <button mat-stroked-button color="primary" [routerLink]="['/admin/current-comments']" (click)="drawer.close()">{{'Current' | translate}}</button>
+        <button class="ml-4" mat-stroked-button [routerLink]="['/admin/confirm-comments']" color="accent" (click)="drawer.close()">{{'Pending' | translate}}</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-description>
+            {{'ManageReservations' | translate}}
+            <mat-icon>book</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <button mat-stroked-button color="accent" [routerLink]="['/admin/show-reservations']" (click)="drawer.close()">{{'Pending' | translate}}</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <footer class="footer card shadow-sm rounded">
+      <div class="container text-center">
+        <span class="text-muted"><small>Justin A. Castillo V. | Luis C. González C.</small></span>
+      </div>
+    </footer>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div id="nav-container" class="fixed-top">
+      <nav class="navbar shadow-lg mb-5 mt-3">
+        <a *ngIf="auth.isLoggedIn()" style="cursor: pointer" class="navbar-brand text-white" (click)="drawer.toggle()"><mat-icon>menu</mat-icon></a>
+        <div class="navbar-expand mr-auto">
+          <div class="navbar-nav">
+            <a routerLinkActive="active-link" [routerLink]="['/general/home']" class="nav-item nav-link active" href="#">{{'Home' | translate}}</a>
+            <a routerLinkActive="active-link" [routerLink]="['/contact-us']" class="nav-item nav-link" href="#">{{'Contact' | translate}}</a>
+          </div>
+        </div>
+        <div class="navbar-expand ml-auto navbar-nav">
+          <div class="navbar-nav">
+            <div ngbDropdown class="d-inline-block">
+              <a class="nav-item nav-link" ngbDropdownToggle id="translate-dropdown" target="_blank">
+                <i class="material-icons" style="font-size:20px">translate</i>
+              </a>
+              <div ngbDropdownMenu aria-labelledby="translate-dropdown">
+                <button (click)="switchLanguage('en')" class="dropdown-item">English</button>
+                <hr>
+                <button (click)="switchLanguage('es')" class="dropdown-item">Español</button>
+              </div>
+            </div>
+            <a class="nav-item nav-link" (click)="openDialog()">
+              <i class="material-icons align">fingerprint</i>
+            </a>
+            <a class="nav-item nav-link" (click)="logout()" *ngIf="auth.isLoggedIn();">
+              <i class="material-icons align">subdirectory_arrow_left</i>
+            </a>
+            <a class="nav-item nav-link btn" (click)="openDevsInfo()">
+              <i class="material-icons align">code</i>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container pt-5 mt-5">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
 

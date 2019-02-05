@@ -1,0 +1,42 @@
+@import '../../../ui-utils/variables';
+
+#users-container {
+  list-style-type: none;
+  padding: 0;
+  width: 50%;
+}
+.user {
+  padding-top: 1%;
+  margin-bottom: 1%;
+}
+#footer-list {
+  list-style-type: none;
+  padding: 0;
+}
+.footer-li {
+  display: inline-block;
+}
+
+#data {
+  padding: 0;
+  list-style-type: none;
+}
+.item {
+  display: inline-block;
+  margin: 2%;
+}
+
+mat-progress-bar{
+  width: 50%;
+  margin: auto auto 5% auto;
+}
+
+h5{
+  text-align: center;
+  margin: 24% auto 1% auto;
+  color: $accent-color;
+}
+
+mat-card{
+  background-color: $secondary-color;;
+}

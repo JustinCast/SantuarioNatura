@@ -1,0 +1,63 @@
+<div class="container" *ngIf="_activityService.activities.length>0; else loading">
+  <ul id="activities-container" class="container" >
+    <li class="activity" *ngFor="let a of _activityService.activities | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+      <div class="text-center card rounded p-3 shadow-sm" id="activity-card">
+        <h4>
+          {{a.name}}
+        </h4>
+        <hr>
+        <div>
+          <ul id="details" class="text-left">
+            <li class="detail">
+              <mat-icon class="align icon-color">description</mat-icon>
+              <strong>
+                {{'Description' | translate}}
+              </strong>
+            </li>
+            <p>
+              {{a.description}}
+            </p>
+            <li class="detail">
+              <mat-icon class="align icon-color">sort</mat-icon>
+              <strong>
+                {{'Difficulty' | translate}}
+              </strong>
+            </li>
+            <p>
+              {{a.difficulty}}
+            </p>
+            <li class="detail">
+              <mat-icon class="align icon-color">format_list_bulleted</mat-icon>
+              <strong>
+                {{'Includes' | translate}}
+              </strong>
+            </li>
+            <p>
+              {{a.includes}}
+            </p>
+            <li class="detail">
+              <mat-icon class="align icon-color">access_time</mat-icon>
+              <strong>
+                {{'Duration' | translate}}
+              </strong>              
+            </li>
+            <p>
+              {{a.duration}} {{'Hours' | translate}}
+            </p>
+          </ul>
+        </div>
+        <br>
+        <div class="text-center container">
+          <button mat-button routerLink="../edit-activity/{{i}}" color="primary"><mat-icon>edit</mat-icon></button>
+          <button mat-button (click)="deleteActivity(i)" color="warn" class="ml-2"><mat-icon>delete</mat-icon></button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <pagination-controls class="container text-center" *ngIf="_activityService.activities && _activityService.activities.length > 5" (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<ng-template #loading>
+  <h5>{{'LoadingActivities' | translate}}</h5>
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+</ng-template>

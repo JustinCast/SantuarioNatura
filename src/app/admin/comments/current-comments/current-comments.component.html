@@ -1,0 +1,26 @@
+<section>
+  <div class="container card" *ngIf="_commentService.comments.length>0; else loading">
+    <h3>
+      {{'CurrentComments' | translate}}
+    </h3>
+    <mat-accordion *ngFor="let auxComment of _commentService.comments">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{auxComment.name}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          {{auxComment.comment}}
+        </p>
+        <mat-action-row>
+          <button mat-button color="warn" (click)="deleteComment(auxComment.id)">{{'Delete' | translate}}</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</section>
+<ng-template #loading>
+  <h5>{{'LoadingComments' | translate}}</h5>
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+</ng-template>

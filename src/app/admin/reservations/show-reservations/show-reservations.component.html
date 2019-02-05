@@ -1,0 +1,85 @@
+<ul id="reservations-container" class="container text-center" *ngIf="_reservation.reservations.length>0; else loading">
+  <li class="reservation card rounded m-1 shadow p-2" *ngFor="let r of _reservation.reservations">
+    <div class="rounded" id="header">
+      <strong>{{'Customer' | translate}} </strong>{{r.name}}
+    </div>
+    <hr>
+    <ul class="details-list">
+      <li>
+        <strong class="emphasis">{{'Activity' | translate}}</strong>
+        <p>{{r.activity}}</p>
+      </li>
+      <li>
+        <strong class="emphasis">{{'ActivityDate' | translate}}</strong>
+        <p>
+          {{r.activity_date | date}}
+        </p>
+      </li>
+      <li><strong class="emphasis">E-mail</strong>
+        <p>
+          {{r.email}}
+        </p>
+      </li>
+      <li><strong class="emphasis">Phone</strong>
+        <p>
+          {{r.phone}}
+        </p>
+      </li>
+      <li><strong class="emphasis">Country</strong>
+        <p>
+          {{r.country}}
+        </p>
+      </li>
+      <li><strong class="emphasis">Adults</strong>
+        <p>
+          {{r.adults}}
+        </p>
+      </li>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              More Info
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ul class="details-list">
+            <li class="text-left" *ngIf="r.children !== null"><strong class="emphasis">Children: </strong>{{r.children}}</li>
+            <li class="text-left"><strong class="emphasis">Activity: </strong>{{r.activity}}</li>
+            <li class="text-left"><strong class="emphasis">Activity date: </strong>{{r.activityDate | date}}</li>
+            <li class="text-left" *ngIf="r.feeding === true; else noFeeding"><strong class="emphasis">Feeding: </strong><mat-icon class="align">check_circle_outline</mat-icon></li>
+            <ng-template #noFeeding>
+              <li class="text-left"><strong class="emphasis">Feeding: </strong><mat-icon class="align">block</mat-icon></li>
+            </ng-template>
+            <li class="text-left" *ngIf="r.transport === true; else noTransport"><strong class="emphasis">Transport: </strong><mat-icon class="align">check_circle_outline</mat-icon></li>
+            <ng-template #noTransport>
+              <li class="text-left"><strong class="emphasis">Transport: </strong><mat-icon class="align">block</mat-icon></li>
+            </ng-template>
+            <li class="text-left" *ngIf="r.lodging === true; else noLodging">
+              <strong class="emphasis">Lodging: </strong><mat-icon class="align">check_circle_outline</mat-icon><br>
+              <strong class="emphasis">{{'LodgingStartDate' | translate}}: </strong>{{r.lodging_start_date | date}}<br>
+              <strong class="emphasis">{{'LodgingFinishDate' | translate}}: </strong>{{r.lodging_finish_date | date}}
+            </li>
+            <ng-template #noLodging>
+              <li class="text-left"><strong class="emphasis">Lodging: </strong><mat-icon class="align">block</mat-icon></li>
+            </ng-template>
+            <hr>
+            <div *ngIf="r.comment !== null" class="text-center container">
+              <button class="done-button" mat-raised-button (click)="_dialog.seeComment(r.comment); false"><mat-icon>feedback</mat-icon></button>
+            </div>
+          </ul>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <li>
+        <h6><strong id="color-red">{{'PaymentMethod' | translate}}: </strong> {{r.payment_method}}</h6>
+      </li>
+    </ul>
+    <div class="container text-center">
+      <button class="done-button" mat-raised-button (click)="deleteReservation(r.id); false"><mat-icon>done</mat-icon></button>
+    </div>
+  </li>
+</ul>
+
+<ng-template #loading>
+  <h5>{{'LoadingReservations' | translate}}</h5>
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+</ng-template>

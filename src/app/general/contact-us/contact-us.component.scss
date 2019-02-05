@@ -1,0 +1,67 @@
+@import "../../ui-utils/variables";
+
+#contact-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-item {
+  display: block;
+  width: 45%;
+  margin: auto auto 3% auto;
+  background-color: $secondary-color-gray;
+}
+.green-color-icon{
+  color: green;
+}
+
+#details {
+  list-style-type: none;
+  background-color: rgba($color: #503332, $alpha: 0.030);
+  padding: 1.5%;
+}
+.detail {
+  background-color: transparent;
+  margin: 2%;
+  text-align: center;
+}
+
+#details > hr {
+  width: 90%;
+  display: block;
+  height: 0.5px;
+  border: 0;
+  border-top: 0.9px solid $secondary-color-gray;
+  padding: 0;
+}
+
+#main-contact-info {
+  padding: 0.2%;
+  background-color: $secondary-color-gray;
+}
+
+#default-loc {
+  width: 100%;
+  height: 80%;
+}
+
+form, #main-contact-info{
+  border: 0.5px solid rgba($color:  green, $alpha: 0.5);
+  border-radius: 3px
+}
+
+mat-form-field{
+  width: 90%;
+}
+h4{
+  color: green !important;
+  margin: 4%;
+}
+
+#seeLoc{
+  margin: 3%;
+}
+
+#submit-button{
+  margin: 3%;
+}

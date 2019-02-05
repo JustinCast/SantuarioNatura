@@ -1,0 +1,44 @@
+@import "../../ui-utils/variables";
+
+ngb-carousel {
+  width: 60%;
+  margin: auto;
+}
+.imageCorousel {
+  background-size: cover;
+  width: 1000px;
+  height: 400px;
+  margin: auto;
+}
+
+#infoActivity {
+  text-align: center;
+}
+
+.infoSectionActivity {
+  display: inline-table;
+  margin: 3%;
+  width: 35%;
+  background-color: $secondary-color-gray;
+  padding: 3%;
+}
+
+mat-progress-bar{
+  width: 50%;
+  margin: auto auto 5% auto;
+}
+
+h5{
+  text-align: center;
+  margin: 5% auto 1% auto;
+}
+
+
+h2{
+  margin: 2%;
+  color:$accent-color;
+}
+
+b,button{
+  margin: 2%; 
+}

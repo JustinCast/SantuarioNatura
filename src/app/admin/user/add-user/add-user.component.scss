@@ -1,0 +1,14 @@
+@import '../../../ui-utils/variables';
+
+form{
+    margin: 5%  auto auto auto;
+    width: 50%;
+    background-color: $secondary-color;
+}
+mat-form-field {
+    width: 90%;
+    margin: auto
+}
+h1{
+    color: $accent-color;
+}

@@ -1,0 +1,36 @@
+@import "../../../ui-utils/variables";
+mat-form-field {
+  width: 85%;
+  margin: auto;
+}
+.images {
+  display: inline-block;
+}
+.imgCarousel {
+  background-size: cover;
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  border-radius: 10px;
+}
+
+ngb-carousel {
+  margin: auto;
+  width: 70%;
+  margin-top: 0;
+  background-color: $txt-color;
+  padding: 1% 0;
+  border-radius: 2px;
+  top: 0;
+}
+
+div.carousel-caption {
+  background-color: rgba(80,51,50, 0.6);
+  width: 25%;
+  right: 0;
+  border-radius: 3px;
+  padding: 10px;
+  margin: auto;
+  bottom: 0;
+  margin-bottom: 0;
+}

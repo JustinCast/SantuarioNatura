@@ -1,0 +1,184 @@
+<div class="card shadow-sm p-1 rounded" id="reservationContainer" >
+  <form
+    class="text-center example-form"
+    [formGroup]="reservationFG"
+    (ngSubmit)="onSubmit()"
+  >
+    <h2 class="text-center element">
+      <strong>
+          {{'PreReservationForm' | translate}}
+      </strong>
+    </h2>
+    <section>
+      <h3 class="text-center">{{'PersonalInformation' | translate}}</h3>
+      <mat-form-field class="example-full-width element">
+        <input
+          matInput
+          [formControl]="reservationFG.get('name')"
+          placeholder="{{'Name' | translate}}"
+          type="text"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width element">
+          <input
+            matInput
+            [formControl]="reservationFG.get('email')"
+            placeholder="{{'Mail' | translate}}"
+            type="email"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field class="example-full-width element">
+          <input
+            matInput
+            [formControl]="reservationFG.get('phone')"
+            placeholder="{{'Whatsapp' | translate}}"
+            type="number"
+          />
+        </mat-form-field>
+        <mat-form-field class="element" >
+          <mat-select
+            [formControl]="reservationFG.get('country')"
+            placeholder="{{'Country' | translate}}"
+            type="text"
+            required
+          >
+            <mat-option *ngFor="let country of _reservationService.countries" [value]="country.name">
+              {{country.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </section>
+
+    <section>
+      <h3 class="text-center">{{'PeopleNumber' | translate}}</h3>
+      <mat-form-field class="element">
+        <mat-select
+          [formControl]="reservationFG.get('adult')"
+          placeholder="{{'Adults' | translate}}"
+          type="number"
+          required
+
+        >
+          <mat-option *ngFor="let adult of numbers" [value]="adult">
+            {{ adult }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="element" >
+        <mat-select
+          [formControl]="reservationFG.get('children')"
+          placeholder="{{'Children' | translate}}"
+          type="number"
+        >
+          <mat-option *ngFor="let children of numbers" [value]="children">
+            {{ children }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+    <section>
+    <h3 class="text-center">{{'ServicesToReserve' | translate}}</h3>
+    <mat-form-field class="element"  >
+        <mat-select
+          placeholder="{{'Activity' | translate}}"
+          type="text"
+          required
+          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="activity.name"
+        >
+          <mat-option *ngFor="let activity of _reservationService.activities" [value]="activity.name">
+            {{activity.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="element">
+        <input
+          matInput
+          [formControl]="reservationFG.get('date')"
+          [matDatepicker]="date"
+          placeholder="{{'ActivityDate' | translate}}"
+          required
+        />
+        <mat-datepicker-toggle  matSuffix [for]="date"></mat-datepicker-toggle>
+        <mat-datepicker #date></mat-datepicker>
+      </mat-form-field>
+
+      <mat-checkbox  [formControl]="reservationFG.get('feeding')" class="element"
+        >{{'Feeding' | translate}}</mat-checkbox
+      >
+      <mat-checkbox [formControl]="reservationFG.get('transport')" class="element"
+        >{{'Transport' | translate}}</mat-checkbox
+      >
+    </section>
+
+    <section>
+      <h3>{{'LodgingDates' | translate}}</h3>
+      <mat-checkbox [formControl]="reservationFG.get('lodging')" class="element"
+      >{{'Lodging' | translate}}</mat-checkbox
+    >
+    <mat-form-field class="element">
+      <input
+        matInput
+        [formControl]="reservationFG.get('startDate')"
+        [matDatepicker]="startDate"
+        placeholder="{{'StartDate' | translate}}"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="startDate"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #startDate></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="element">
+      <input
+        matInput
+        [formControl]="reservationFG.get('finishDate')"
+        [matDatepicker]="finishDate"
+        placeholder="{{'FinishDate' | translate}}"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="finishDate"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #finishDate></mat-datepicker>
+    </mat-form-field>
+    </section>
+    <section>
+      <h3 class="text-center">{{'Others' | translate}}</h3>
+      <mat-form-field class="element">
+        <mat-select
+          [formControl]="reservationFG.get('payment')"
+          placeholder="{{'PaymentMethod' | translate}}"
+          required
+        >
+          <mat-option *ngFor="let payment of payments" [value]="payment">
+            {{ payment }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width" style="width: 50%">
+        <textarea
+          [formControl]="reservationFG.get('comment')"
+          matInput
+          placeholder="{{'LeaveACommentary' | translate}}"
+        ></textarea>
+      </mat-form-field>
+    </section>
+    <br>
+    <button
+      id="submit-button"
+      [disabled]="!reservationFG.valid"
+      type="submit"
+      style="width: 20%"
+      mat-button
+    >
+    <strong>
+      {{'Submit' | translate}}
+    </strong>
+    </button>
+  </form>
+</div>

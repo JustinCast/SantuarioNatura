@@ -1,0 +1,31 @@
+<ul id="contact-list" class="container text-center mt-5">
+  <li id="main-contact-info" class="contact-item shadow-sm mb-4">
+    <h4 class="text-black">{{ "WeAreLocated" | translate }}</h4>
+    <ul id="details" class="container text-left">
+      <li class="detail"><mat-icon class="align green-color-icon">phone</mat-icon><strong> (+506) </strong>8616 - 7411</li>
+      <li class="detail"><mat-icon class="align green-color-icon">mail</mat-icon> info@santuarionatura.com</li>
+      <li class="detail text-center">
+        <button id="seeLoc" mat-stroked-button (click)="seeLoc();">
+          <mat-icon>map</mat-icon> {{'Location' | translate}}
+        </button>
+      </li>
+    </ul>
+  </li>
+  <li class="contact-item shadow-sm">
+    <form [formGroup]="sendEmailFG" class="p-2" (ngSubmit)="sendEmail();">
+      <h4  class="text-dark">{{'OrSendUs' | translate}}</h4>
+      <mat-form-field>
+        <input matInput type="email" [formControl]="sendEmailFG.get('from')" placeholder="{{'From' | translate}}">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [formControl]="sendEmailFG.get('subject')" placeholder="{{'Subject' | translate}}">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [formControl]="sendEmailFG.get('text')" placeholder="{{'Content' | translate}}">
+      </mat-form-field>
+      <div class="container text-center m-auto">
+        <button id="submit-button" mat-stroked-button type="submit" [disabled]="!sendEmailFG.valid"><mat-icon>send</mat-icon></button>
+      </div>
+    </form>
+  </li>
+</ul>

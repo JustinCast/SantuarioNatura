@@ -1,0 +1,27 @@
+<form [formGroup]="userFG" (ngSubmit)="onSubmit()" class="card shadow-sm p-3 mb-5 rounded text-center">
+  <h1>{{'AddUsers' | translate}}</h1>
+  <mat-form-field>
+    <input [formControl]="userFG.get('name')" matInput type="text" placeholder="{{'Name' | translate}}">
+  </mat-form-field>
+  <mat-form-field>
+    <input [formControl]="userFG.get('username')" matInput type="text" placeholder="{{'Username' | translate}}">
+  </mat-form-field>
+  <mat-form-field>
+    <input [formControl]="userFG.get('email')" matInput type="email" placeholder="{{'Email' | translate}}">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [formControl]="userFG.get('role')" placeholder="{{'Role' | translate}}">
+      <mat-option [value]="true">{{'SuperAdmin' | translate}}</mat-option>
+      <mat-option [value]="false">{{'Editor' | translate}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input [formControl]="userFG.get('password')" matInput type="password" placeholder="{{'Password' | translate}}">
+  </mat-form-field>
+  <mat-form-field>
+    <input [formControl]="userFG.get('confirmPassword')" matInput type="password" placeholder="{{'ConfirmPassword' | translate}}">
+  </mat-form-field>
+  <div class="text-center container">
+    <button type="submit" [disabled]="!userFG.valid" mat-raised-button color="primary"><mat-icon>{{icon}}</mat-icon></button>
+  </div>
+</form>

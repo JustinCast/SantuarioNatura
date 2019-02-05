@@ -1,0 +1,25 @@
+@import '../../ui-utils/variables';
+//-----------Services offered
+
+#servicesOfferedCont {
+    text-align: center;
+}
+  
+.service {
+    display: inline-block;
+    margin: 1% 25% 0% 25%;
+}
+
+.sentence {
+    text-align: center;
+    margin: 2%;
+}
+
+p{
+    margin: 2% 0% 2% 0%;
+}
+
+h2{
+    color: $accent-color;
+}
+

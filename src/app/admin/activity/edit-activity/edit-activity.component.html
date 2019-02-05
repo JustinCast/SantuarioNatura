@@ -1,0 +1,56 @@
+<div class="container text-center mb-2 shadow-sm pt-3">
+  <h3 class="text-primary">{{'EditActivities' | translate}}</h3>
+  <mat-form-field>
+    <input matInput [(ngModel)]="activity.name" placeholder="{{'ActivityName' | translate}}" type="text">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput [(ngModel)]="activity.description" placeholder="{{'Description' | translate}}" type="text">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-select placeholder="{{'Difficulty' | translate}}" [(ngModel)]="activity.difficulty">
+      <mat-option *ngFor="let d of difficulty" [value]="d">{{d}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="activity.includes" placeholder="{{'Includes' | translate}}"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [(ngModel)]="activity.duration" placeholder="{{'Duration' | translate}}">
+      <mat-option *ngFor="let d of duration" [value]="d">{{d}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput [(ngModel)]="activity.bring" placeholder="{{'Bring' | translate}}"></textarea>
+  </mat-form-field>
+  <div class="container text-center">
+    <h5 class="text-secondary text-center">{{'Location' | translate}}</h5>
+    <button mat-raised-button color="primary" (click)="openLocDialog();"><mat-icon>add_location</mat-icon></button>
+  </div>
+  <hr>
+  <div class="container text-center">
+    <h5 class="text-secondary text-center">Rates</h5>
+    <button mat-raised-button (click)="editRates(); false"><mat-icon>book</mat-icon></button>
+  </div>
+  <mat-form-field>
+    <mat-select [(ngModel)]="activity.access" placeholder="{{'Access' | translate}}">
+     <mat-option *ngFor="let a of access" [value]="a">{{a}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <section class="container text-center m-2">
+    <mat-checkbox [(ngModel)]="activity.in_offer" [checked]="activity.in_offer">{{'InOffer' | translate}}</mat-checkbox>
+  </section>
+  <hr>
+  <ngb-carousel class="text-center shadowm-lg m-auto" *ngIf="activity.images && activity.images.length > 0">
+    <ng-template ngbSlide *ngFor="let img of activity.images">
+      <img src="http://localhost:5000/static/images/{{img.filename}}" width="auto" height="auto" class="container imgCarousel" >
+      <div class="container text-right">
+        <button mat-button color="warn" (click)="deleteImage(img);"><mat-icon>delete</mat-icon></button>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  <div class="container pb-3 mt-3">
+    <button color="accent" (click)="updateActivity()" mat-stroked-button><mat-icon>done_all</mat-icon></button>
+  </div>
+</div>

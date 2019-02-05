@@ -1,0 +1,30 @@
+<div id="comments" *ngIf="_commentService.comments.length>0; else loading">
+  <h2 class="sentence">{{'Testimonies' | translate}}</h2>
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let auxComment of _commentService.comments">
+      <section>
+        <strong>
+          <p class="textComment">
+            {{auxComment.comment}}
+          </p>
+        </strong>
+        <b class="author">{{auxComment.name}}</b>
+      </section>
+    </ng-template>
+  </ngb-carousel>
+  <button 
+  class="sentence" 
+  mat-button 
+  (click)="openCommentDialog()"
+  >
+    <i class="material-icons">
+      insert_comment
+    </i>
+    {{'LeaveACommentary' | translate}}
+  </button>
+</div>
+
+<ng-template #loading>
+  <h5>{{'LoadingComments' | translate}}</h5>
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+</ng-template>

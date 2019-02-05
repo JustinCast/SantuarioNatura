@@ -1,0 +1,50 @@
+@import '../../ui-utils/variables';
+
+#comments{
+    text-align: center;
+    margin: 2% 0% 2% 0%;
+}
+
+.author{
+    margin-top: 2%;
+    font-size: 20px;
+    color: $accent-color;
+}
+
+.textComment{
+    margin-top: 2%;
+    font-size: 22px;
+}
+
+.sentence {
+    text-align: center;
+    margin: 2%;
+}
+
+ngb-carousel {
+    margin: auto;
+    width: 60%;
+    margin-top: 0;
+    background-color:$primary-color-dark;
+    padding: 2%;
+    border-radius: 10px;
+    top: 0;
+}
+
+button,section{
+    margin: 3%;
+}
+
+mat-progress-bar{
+    width: 50%;
+    margin: auto auto 5% auto;
+}
+
+h5{
+    text-align: center;
+    margin: 5% auto 1% auto;
+}
+
+h2{
+    color: $accent-color;
+}

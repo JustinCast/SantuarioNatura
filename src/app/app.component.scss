@@ -1,0 +1,86 @@
+@import './ui-utils/variables';
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.top-margin {
+  margin: 2%;
+}
+li {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar { 
+  display: none; 
+}
+
+.active-link {
+  color: green !important;
+  font-weight: bold;
+}
+
+mat-drawer {
+  padding-top: 1.5%;
+  width: 25%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+a {
+  cursor: pointer;
+  color: $txt-color
+}
+#manage-service-btn {
+  background-color: #1b5e20;
+  color: white;
+}
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+nav{
+  background-color: $primary-color-dark;
+  border-radius: 25px;
+  left: 1%;
+  right: 1%;
+  width: 97%;
+}
+#nav-container {
+  width: 100%;
+}
+#router-outlet-container {
+  top: 5%;
+}
+h1{
+  color: $txt-color
+}
+mat-drawer-container{
+  background-color: $secondary-color
+}
+#brand {
+  width: 50px;
+  height: 50px;
+}
+#admin-brand {
+  width: 50%;
+  height: 25%;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #e9e9e9;
+}

@@ -1,0 +1,12 @@
+<div *ngIf="_activityService.bestFourActivities.length>0; else loading">
+  <section>
+    <h2 class="sentence">{{'MostVisitedActivities' | translate}}</h2>
+    <mat-card  *ngFor="let item of _activityService.bestFourActivities">
+      <p class="textCenterItalic">{{item.name}}</p>
+    </mat-card>
+  </section>
+</div>
+<ng-template #loading>
+    <h5>{{'LoadingMostVisitedActivities' | translate}}</h5>
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
+</ng-template>

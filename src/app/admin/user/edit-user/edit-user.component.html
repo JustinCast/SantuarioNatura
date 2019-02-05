@@ -1,0 +1,35 @@
+<div class="container text-center">
+  <mat-form-field
+    ><input matInput [(ngModel)]="user.name" type="text" placeholder="{{'Name' | translate}}"/>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="user.username" type="text" placeholder="{{'Username' | translate}}"/>
+  </mat-form-field>
+  <mat-slide-toggle [(ngModel)]="change">{{'ChangePassword' | translate}}</mat-slide-toggle>
+  <div *ngIf="change" class="container text-center">
+    <mat-form-field>
+      <input matInput type="password" #pass placeholder="{{'Password' | translate}}"/>
+    </mat-form-field>
+    <div class="container">
+      <button mat-stroked-button [disabled]="pass.value.length === 0" (click)="verifyPassword(pass.value); false"><mat-icon>search</mat-icon></button>
+    </div>
+    <mat-card [hidden]="!verified" class="m-4">
+      <mat-form-field>
+        <input matInput type="password" [(ngModel)]="user.newPassword" placeholder="{{'NewPassword' | translate}}"/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" [(ngModel)]="user.confirmPassword" placeholder="{{'ConfirmPassword' | translate}}"/>
+      </mat-form-field>
+    </mat-card>
+  </div>
+  <mat-form-field>
+    <mat-select [(ngModel)]="user.role" placeholder="{{'Role' | translate}}">
+      <mat-option [value]="true">{{'SuperAdmin' | translate}}</mat-option>
+      <mat-option [value]="false">{{'Editor' | translate}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <hr>
+  <div class="container text-center">
+    <button (click)="updateUser()" mat-button><mat-icon>done_all</mat-icon></button>
+  </div>
+</div>

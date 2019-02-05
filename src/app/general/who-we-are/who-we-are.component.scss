@@ -1,0 +1,39 @@
+@import '../../ui-utils/variables';
+//---------------Who we are
+
+#firstWhoWeAreCont {
+    margin: 3% 2% 3% 2%;
+    text-align: center;
+}
+  
+#secondWhoWeAreCont {
+    text-align: center;
+}
+  
+.cardWhoWeAre {
+    width: 30%;
+    border-radius: 0.3cm;
+    margin: 1%;
+    display: inline-block;
+}
+  
+.imageStyleWhoWeAre {
+    background-size: cover;
+    border-radius: 0.3cm;
+    padding: 0px;
+}
+
+.sentence {
+    text-align: center;
+    margin: 2%;
+}
+
+.textCenterItalic {
+    font-size: 120%;
+    font-style: italic;
+    text-align: center;
+}
+
+h2{
+    color: $accent-color;
+}

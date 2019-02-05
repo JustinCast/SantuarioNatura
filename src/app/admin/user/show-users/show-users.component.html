@@ -1,0 +1,32 @@
+<div class="container">
+  <ul id="users-container" class="container" *ngIf="_userService.users.length !== 0; else loading">
+    <li class="user" *ngFor="let u of _userService.users | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+      <mat-card class="text-center">
+        <h4 class="text-primary">{{u.name}}</h4>
+        <hr>
+        <mat-card-content>
+          <ul id="data">
+            <li class="item"><mat-icon class="align">account_circle</mat-icon>{{u.username}}</li>
+            |
+            <li class="item"><mat-icon class="align">group</mat-icon>
+              <span *ngIf="u.role; else editor">{{'SuperAdmin' | translate}}</span>
+              <ng-template #editor>
+                <span>{{'Editor' | translate}}</span>
+              </ng-template>
+            </li>
+          </ul>
+        </mat-card-content>
+        <hr>
+        <mat-card-actions class="text-center">
+          <button mat-button (click)="editUser(i)" color="primary"><mat-icon>edit</mat-icon></button>
+          <button mat-button (click)="deleteUser(i)" color="warn" class="ml-2"><mat-icon>delete</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+    </li>
+  </ul>
+  <ng-template #loading>
+    <h5>{{'LoadingUsers' | translate}}</h5>
+    <mat-progress-bar mode="buffer"></mat-progress-bar>
+  </ng-template>
+</div>
+<pagination-controls *ngIf="_userService.users && _userService.users.length > 5" (pageChange)="p = $event"></pagination-controls>

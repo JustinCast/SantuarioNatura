@@ -1,0 +1,23 @@
+@import '../../ui-utils/variables';
+//-----------Social Networks
+
+#socialNetworksCont {
+    text-align: center;
+}
+  
+.iconSocialNetwork {
+    margin: 2%;
+    display: inline-block;
+}
+
+.iconBlack {
+    color: black;
+}
+
+.sentence {
+    text-align: center;
+}
+
+h2{
+    color: $accent-color;
+}

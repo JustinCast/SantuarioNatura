@@ -1,0 +1,34 @@
+@import '../../ui-utils/variables';
+
+.sentence {
+    text-align: center;
+    margin: 2%;
+}
+
+.textCenterItalic {
+    font-size: 120%;
+    font-style: italic;
+    text-align: center;
+}
+
+mat-card{
+    width: 40%;
+    margin: auto;
+    margin-bottom: 1%;
+    background-color: $primary-color-dark;
+}
+
+h2{
+    color: $accent-color;
+}
+
+mat-progress-bar{
+    width: 50%;
+    margin: 1% auto 5% auto;
+}
+
+
+h5{
+    text-align: center;
+    margin: 8% auto 1% auto;
+}

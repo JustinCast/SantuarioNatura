@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "ndm": "nodemon index.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
+    "postinstall": "ng build --aot --prod",
     "e2e": "ng e2e"
   },
   "private": true,

@@ -1,0 +1,53 @@
+<form class="container" [formGroup]="ratesGroup" (ngSubmit)="onSubmit()">
+  <h3 class="text-center text-primary">{{'RatesInfo' | translate}}</h3>
+  <hr>
+  <table class="container text-center" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field>
+          <input matInput maxlength="2" [formControl]="ratesGroup.get('from')" placeholder="{{'From' | translate}}" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput maxlength="2" [formControl]="ratesGroup.get('to')" placeholder="{{'To' | translate}}" />
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input
+            matInput [formControl]="ratesGroup.get('rate')"
+            placeholder="{{'Price' | translate}}"
+          />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <hr>
+  <br>
+  <table class="table container shadow-sm rounded" *ngIf="rates && rates.length !== 0">
+    <thead class="thead-dark">
+      <tr class="container text-center">
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody class="container text-center">
+      <tr *ngFor="let r of rates; let i = index">
+        <td>{{r._from}}</td>
+        <td>{{r._to}}</td>
+        <td>{{r._rate}}</td>
+        <td>
+          <button mat-button color="warn" (click)="rates.splice(i, 1); false"><mat-icon>delete</mat-icon></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="container text-center">
+    <button mat-stroked-button [disabled]="!ratesGroup.valid" (click)="addRate(); false"><mat-icon>add</mat-icon></button>
+    <hr>
+    <button mat-stroked-button [disabled]="!ratesGroup.valid && rates" type="submit"><mat-icon>done_all</mat-icon></button>
+  </div>
+</form>

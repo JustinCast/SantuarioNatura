@@ -1,0 +1,75 @@
+<form class="card shadow-sm p-3 mb-5 rounded" *ngIf="!_activityService.loading; else progressbar" [formGroup]="activityFG" (ngSubmit)="onSubmit()">
+  <h4 class="text-center">{{'ActivityInfo' | translate}}</h4>
+  <hr>
+  <mat-form-field>
+    <input matInput type="text" placeholder="{{'ActivityName' | translate}}" [formControl]="activityFG.get('name')">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput type="number" placeholder="{{'Description' | translate}}" [formControl]="activityFG.get('description')"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="{{'Difficulty' | translate}}" [formControl]="activityFG.get('difficulty')">
+      <mat-option *ngFor="let d of difficulty" [value]="d">{{d}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput [formControl]="activityFG.get('includes')" placeholder="{{'Includes' | translate}}"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [formControl]="activityFG.get('duration')" placeholder="{{'Duration' | translate}}">
+      <mat-option *ngFor="let d of duration" [value]="d">{{d}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput [formControl]="activityFG.get('bring')" placeholder="{{'Bring' | translate}}"></textarea>
+  </mat-form-field>
+  <hr>
+  <div class="container text-center">
+    <button mat-stroked-button color="primary" (click)="pickLocation(); false"><mat-icon>add_location</mat-icon></button>
+  </div>
+  <hr>
+  <div class="container text-center">
+    <h5 class="text-secondary text-center">Rates</h5>
+    <button style="color: white" mat-raised-button [ngStyle]="{'background-color': !rates ? '#3f51b5' : 'green' }" (click)="addRates(); false"><mat-icon>{{iconRates}}</mat-icon></button>
+  </div>
+  <mat-form-field>
+    <mat-select [formControl]="activityFG.get('access')" placeholder="{{'Access' | translate}}">
+     <mat-option *ngFor="let a of access" [value]="a">{{a}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <section class="container text-center m-3">
+    <mat-checkbox [formControl]="activityFG.get('inOffer')">{{'InOffer' | translate}}</mat-checkbox>
+  </section>
+  <div class="container text-center">
+    <input mat-button type="file" name="single" value="Seleccionar" ng2FileSelect [uploader]="_activityService.uploader" multiple/> <br>
+  </div>
+  <ng-container *ngIf="_activityService.uploader.queue">
+    <hr>
+    <mat-list role="list">
+      <mat-list-item *ngFor="let i of _activityService.uploader.queue" role="listitem">
+        <div class="container text-left">
+          <p>{{i.file.name}}</p>
+        </div>
+        <div class="container text-right">
+          <button mat-stroked-button color="warn" (click)="i.remove()"><mat-icon>delete</mat-icon></button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <hr>
+  </ng-container>
+  <br>
+  <div class="text-center container">
+    <button class="btn btn-success btn-s" type="submit" [disabled]="!rates || rates.length === 0 || !activityFG.valid || !_activityService.uploader.getNotUploadedItems().length" 
+    mat-raised-button color="primary">
+    <mat-icon>
+      {{icon}}
+    </mat-icon>
+  </button>
+  </div>
+</form>
+<ng-template #progressbar>
+  <div id="loading" class="container">
+    <h2 class="text-center text-primary">Loading</h2>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+</ng-template>

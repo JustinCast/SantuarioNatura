@@ -1,0 +1,65 @@
+@import "../../../ui-utils/variables";
+#reservations-container {
+  list-style-type: none;
+}
+.reservation {
+  display: inline-block;
+  width: 40%;
+  background-color: $secondary-color;
+}
+
+.details-list {
+  list-style-type: none;
+  padding: 0;
+}
+#header {
+  background-color: $primary-color-dark;
+  padding: 3%;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $accent-text-color;
+  margin: 1em 0;
+  padding: 0;
+}
+.emphasis {
+  color: $accent-color;
+}
+
+.done-button {
+  border: 0.5px solid $primary-color-dark;
+}
+mat-expansion-panel {
+  background: $secondary-color-gray;
+  margin: 2% auto 2% auto;
+}
+
+mat-progress-bar{
+  margin: 1% auto auto auto;
+  width: 40%;
+}
+
+h6{
+  text-align: center;
+  margin: 4%;
+}
+
+h5{
+  text-align: center;
+  margin: 25% auto auto auto;
+}
+
+li{
+  text-align: center;
+  margin-top: 0.2px;
+}
+
+p{
+  margin: 0px;
+}
+
+#color-red{
+  color: rgb(201, 23, 23);
+}

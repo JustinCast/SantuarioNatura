@@ -1,0 +1,73 @@
+
+<form
+  *ngIf="!_userService.loading; else: loading"
+  [formGroup]="loginFG"
+  (ngSubmit)="onSubmit()"
+  class="container text-center"
+>
+  <h2 class="text-primary">{{ "Login" | translate }}</h2>
+  <mat-form-field>
+    <input
+      [formControl]="loginFG.get('username')"
+      matInput
+      type="text"
+      placeholder="{{'Username' | translate}}"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      [formControl]="loginFG.get('password')"
+      matInput
+      type="password"
+      placeholder="{{'Password' | translate}}"
+    /> </mat-form-field
+  ><br />
+  <ul id="form-footer">
+    <li>
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                              (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-description>
+            {{"ForgotPassword" | translate}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="container text-center">
+              <mat-form-field>
+              <input
+                [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="username"
+                matInput
+                type="text"
+                placeholder="{{'Username' | translate}}"
+              />
+              </mat-form-field>
+              <div class="text-center">
+              <button mat-button (click)="sendmail()" color="primary">
+                  <mat-icon>send</mat-icon>
+              </button>
+              </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </li>
+  </ul>
+  <hr />
+  <button
+    type="submit"
+    [disabled]="!loginFG.valid"
+    color="primary"
+    mat-raised-button
+  >
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+</form>
+<ng-template #loading>
+  <div id="loading" class="container">
+    <h2 class="text-center text-primary">Loading</h2>
+    <mat-progress-bar
+      style="background-color: white"
+      mode="indeterminate"
+    ></mat-progress-bar>
+  </div>
+</ng-template>

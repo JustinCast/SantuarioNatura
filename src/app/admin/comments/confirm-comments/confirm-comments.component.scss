@@ -1,0 +1,43 @@
+
+@import './../../../ui-utils/variables';
+div{
+    width: 80%;
+    text-align: center;
+    padding: 1%;
+    background-color:$secondary-color-gray;
+    margin: 4% auto 4% auto;
+}
+
+mat-accordion{
+    margin: 0.8% auto 0.8% auto;
+    width: 75%;
+}
+
+mat-expansion-panel{
+    background-color:$secondary-color;
+}
+mat-panel-title{
+    color: $accent-color;
+}
+
+p{
+    margin-top: 4%;
+}
+
+button{
+    border-radius: 200px;
+}
+
+mat-progress-bar{
+    margin: 1% auto auto auto;
+    width: 40%;
+}
+
+h5{
+    text-align: center;
+    margin: 24% auto auto auto;
+}
+
+h3{
+    color: $accent-color;
+}
