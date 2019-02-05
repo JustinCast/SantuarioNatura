@@ -40,10 +40,16 @@ export class PasswordRecoveryComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.resetPasswordFG.get('password').value !== this.resetPasswordFG.get('confirm').value){
-      this._ui.openSnackBar('¡Las contraseñas no coinciden!', 'Ok', 2500)
-    }else{
-      this._user.updatePassword(this.resetPasswordFG.get('password').value, this.username);
+    if (
+      this.resetPasswordFG.get("password").value !==
+      this.resetPasswordFG.get("confirm").value
+    ) {
+      this._ui.openSnackBar("¡Las contraseñas no coinciden!", "Ok", 2500);
+    } else {
+      this._user.updatePassword(
+        this.resetPasswordFG.get("password").value,
+        this.username
+      );
     }
   }
 }
