@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { FileInterface } from '../models/file.interface';
 import { environment } from 'src/environments/environment';
-import { Activity } from '../models/activity';
+import { Activity } from '../models/Activity';
 import { UIUtilsService } from './uiutils.service';
 
 @Injectable({

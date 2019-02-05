@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivityService } from 'src/app/GeneralServices/activity.service';
 import { ImageService } from 'src/app/GeneralServices/image.service';
-import { Activity } from 'src/app/models/activity';
+import { Activity } from 'src/app/models/Activity';
 
 @Component({
   selector: 'app-show-main-activities',

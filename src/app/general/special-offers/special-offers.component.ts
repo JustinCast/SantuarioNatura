@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/GeneralServices/image.service';
 import { ActivityService } from 'src/app/GeneralServices/activity.service';
-import { Activity } from 'src/app/models/activity';
+import { Activity } from 'src/app/models/Activity';
 
 @Component({
   selector: 'app-special-offers',

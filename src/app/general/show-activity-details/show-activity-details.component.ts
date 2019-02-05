@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ImageService } from "src/app/GeneralServices/image.service";
 import { DialogManager } from "src/app/GeneralServices/dialog-manager.service";
 import { RatesService } from "src/app/GeneralServices/rates.service";
-import { Activity } from "src/app/models/activity";
+import { Activity } from "src/app/models/Activity";
 
 @Component({
   selector: "app-show-activity-details",

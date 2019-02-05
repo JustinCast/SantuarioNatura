@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpErrorResponse, HttpClient } from "@angular/common/http";
-import { Activity } from "../models/activity";
+import { Activity } from "../models/Activity";
 import { UIUtilsService } from "./uiutils.service";
 import { environment } from "src/environments/environment";
 import { FileUploader } from "ng2-file-upload";
@@ -43,7 +43,7 @@ export class ActivityService {
         }
       );
   }
-  
+
   getAllActivities() {
     this._http
       .get<Array<Activity>>(`${environment.port}getAllActivities`)
