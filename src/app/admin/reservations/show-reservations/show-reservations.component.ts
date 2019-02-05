@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Reserve } from 'src/app/Models/Reserve';
+import { Reserve } from 'src/app/models/Reserve';
 import { ReservationService } from 'src/app/GeneralServices/reservation.service';
 import { DialogManager } from 'src/app/GeneralServices/dialog-manager.service';
 

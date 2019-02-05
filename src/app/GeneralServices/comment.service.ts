@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 import { UIUtilsService } from "./uiutils.service";
-import { Comments } from "../Models/Comments";
+import { Comments } from "../models/Comments";
 import { MatSnackBar } from "@angular/material";
 
 @Injectable({
@@ -18,7 +18,7 @@ export class CommentService {
     private snackBar: MatSnackBar
   ) {}
 
-  
+
 
   deleteComment(commentId: number) {
     this._http

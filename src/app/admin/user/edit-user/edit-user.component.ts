@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
-import { User } from "src/app/Models/user";
+import { User } from "src/app/models/user";
 import { UserService } from "src/app/GeneralServices/user.service";
 import { HttpErrorResponse } from "@angular/common/http";
 

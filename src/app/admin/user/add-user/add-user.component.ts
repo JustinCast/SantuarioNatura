@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../GeneralServices/user.service';
-import { User } from '../../../Models/user';
+import { User } from '../../../models/user';
 
 @Component({
   selector: 'app-add-user',
@@ -15,7 +15,7 @@ export class AddUserComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _userService: UserService
-  ) { 
+  ) {
     this.userFG = this._fb.group({
       'name': ['', Validators.required],
       'username': ['', Validators.required],

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentService } from 'src/app/GeneralServices/comment.service';
-import { Comments } from 'src/app/Models/Comments';
+import { Comments } from 'src/app/models/Comments';
 
 @Component({
   selector: 'app-confirm-comments',
@@ -11,7 +11,7 @@ export class ConfirmCommentsComponent implements OnInit {
 
   constructor(
     public _commentService: CommentService
-  ) { 
+  ) {
 
   }
 

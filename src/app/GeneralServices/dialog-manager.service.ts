@@ -5,7 +5,7 @@ import { LoginComponent } from '../admin/login/login.component';
 //import { ServiceModel } from '../models/service';
 import { PickLocationComponent } from '../admin/activity/pick-location/pick-location.component';
 import { EditUserComponent } from '../admin/user/edit-user/edit-user.component';
-import { User } from '../Models/user';
+import { User } from '../models/user';
 import { DevsInfoComponent } from '../general/devs-info/devs-info.component';
 import { SeeLocationComponent } from '../general/see-location/see-location.component';
 import { RatesDialogComponent } from '../admin/activity/rates-dialog/rates-dialog.component';

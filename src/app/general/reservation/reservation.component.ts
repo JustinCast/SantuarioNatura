@@ -4,8 +4,8 @@ import {
   FormBuilder,
   Validators,
   AbstractControl
-} from "@angular/forms";
-import { Reserve } from "src/app/Models/Reserve";
+} from '@angular/forms';
+import { Reserve } from 'src/app/models/Reserve';
 import { ReservationService } from "src/app/GeneralServices/reservation.service";
 import { MatSnackBar } from "@angular/material";
 import { ActivityService } from "src/app/GeneralServices/activity.service";

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CommentService } from 'src/app/GeneralServices/comment.service';
-import { Comments } from 'src/app/Models/Comments';
+import { Comments } from 'src/app/models/Comments';
 
 @Component({
   selector: 'app-comments',
@@ -15,7 +15,7 @@ export class CommentsComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     public _commentService: CommentService
-  ) { 
+  ) {
     this.commentFG = this._fb.group({
       name:["",Validators.required],
       comment:["",Validators.required]
