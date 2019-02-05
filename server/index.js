@@ -37,8 +37,8 @@ function routerConfig() {
   app.use(express.static(__dirname + "/dist/SantuarioNatura"));
 
   app.use("/api/v1", api);
-  app.use(express.static("public"));
-  app.use('/static', express.static(path.join(__dirname, 'public')));
+  // app.use(express.static("public"));
+  // app.use('/static', express.static(path.join(__dirname, 'public')));
 
   // Send all requests to index.html
   app.get("/*", function(_, res) {
