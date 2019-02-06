@@ -19,6 +19,7 @@ import { EditRatesComponent } from './activity/edit-rates/edit-rates.component';
 import { ConfirmCommentsComponent } from "./comments/confirm-comments/confirm-comments.component";
 import { CurrentCommentsComponent } from './comments/current-comments/current-comments.component';
 import { AdminRoutingModule } from "./admin-routing.module";
+import { ShowCommentComponent } from './reservations/show-reservations/show-comment/show-comment.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -41,7 +42,8 @@ import { AdminRoutingModule } from "./admin-routing.module";
     ShowReservationsComponent,
     RatesDialogComponent,
     EditRatesComponent,
-    ConfirmCommentsComponent
+    ConfirmCommentsComponent,
+    ShowCommentComponent
   ],
   exports: [
     AdminRootComponent,
@@ -54,6 +56,7 @@ import { AdminRoutingModule } from "./admin-routing.module";
     PickLocationComponent,
     EditUserComponent,
     EditRatesComponent,
+    ShowCommentComponent
   ]
 })
 export class AdminModule {}
