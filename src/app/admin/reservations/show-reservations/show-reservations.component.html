@@ -64,7 +64,7 @@
             </ng-template>
             <hr>
             <div *ngIf="r.comment !== null" class="text-center container">
-              <button class="done-button" mat-raised-button (click)="_dialog.seeComment(r.comment); false"><mat-icon>feedback</mat-icon></button>
+              <button class="done-button" mat-raised-button (click)="_dialog.showComment(r.comment); false"><mat-icon>feedback</mat-icon></button>
             </div>
           </ul>
         </mat-expansion-panel>
