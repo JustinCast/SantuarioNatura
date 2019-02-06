@@ -1,4 +1,4 @@
-<div class="container" *ngIf="_activityService.activities.length>0; else loading">
+<div class="container" *ngIf="_activityService.activities; else loading">
   <ul id="activities-container" class="container" >
     <li class="activity" *ngFor="let a of _activityService.activities | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
       <div class="text-center card rounded p-3 shadow-sm" id="activity-card">
@@ -39,7 +39,7 @@
               <mat-icon class="align icon-color">access_time</mat-icon>
               <strong>
                 {{'Duration' | translate}}
-              </strong>              
+              </strong>
             </li>
             <p>
               {{a.duration}} {{'Hours' | translate}}

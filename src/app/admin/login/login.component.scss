@@ -1,3 +1,4 @@
+@import "../../../app/ui-utils/variables";
 mat-form-field{
     width: 90%
 }
@@ -7,4 +8,23 @@ mat-form-field{
 }
 li {
     display: block;
+}
+
+h2{
+  color: $accent-color;
+}
+
+mat-expansion-panel{
+  background-color: $secondary-color-gray;
+  margin: 5%;
+}
+
+mat-progress-bar{
+  margin: 1% auto auto auto;
+  width: 40%;
+}
+
+h5{
+text-align: center;
+margin: 25% auto auto auto;
 }

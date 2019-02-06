@@ -106,5 +106,6 @@
   "Add":"Add",
   "LoadingUsers":"Loading users",
   "LoadingReservations":"Loading pre-reservations",
-  "LoadingSpecialOffers":"Loading special offers"
+  "LoadingSpecialOffers":"Loading special offers",
+  "Loading":"Loading"
 }

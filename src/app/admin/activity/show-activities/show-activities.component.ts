@@ -14,7 +14,7 @@ export class ShowActivitiesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    if(this._activityService.activities.length === 0)
+    if(this._activityService.activities== undefined)
       this._activityService.getAllActivities();
   }
 

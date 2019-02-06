@@ -5,7 +5,7 @@
   (ngSubmit)="onSubmit()"
   class="container text-center"
 >
-  <h2 class="text-primary">{{ "Login" | translate }}</h2>
+  <h2>{{ "Login" | translate }}</h2>
   <mat-form-field>
     <input
       [formControl]="loginFG.get('username')"
@@ -63,11 +63,6 @@
   </button>
 </form>
 <ng-template #loading>
-  <div id="loading" class="container">
-    <h2 class="text-center text-primary">Loading</h2>
-    <mat-progress-bar
-      style="background-color: white"
-      mode="indeterminate"
-    ></mat-progress-bar>
-  </div>
+  <h5>{{'Loading' | translate}}</h5>
+  <mat-progress-bar mode="buffer"></mat-progress-bar>
 </ng-template>
