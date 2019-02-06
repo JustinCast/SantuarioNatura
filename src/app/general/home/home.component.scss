@@ -1,3 +1,4 @@
+@import '../../ui-utils/variables';
 mat-progress-bar{
     width: 50%;
     margin: auto auto 5% auto;
@@ -6,4 +7,14 @@ mat-progress-bar{
 h5{
     text-align: center;
     margin: 5% auto 1% auto;
+}
+h1{
+  color: green !important;
+  border: 0.5px dashed;
+  border-radius: 25px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 2%;
+  padding: 3%;
+  border-color: $primary-color-dark
 }

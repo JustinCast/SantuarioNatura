@@ -29,8 +29,8 @@ export class ContactUsComponent implements OnInit {
 
   seeLoc() {
     this._dialog.activityLocation({
-      lat: 10.345984,
-      lng: -84.132146
+      lat: 10.3432,
+      lng: -84.12624
     }, false);
   }
 
