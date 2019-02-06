@@ -40,7 +40,6 @@ export class ReservationService {
       data => {
         this.reservations = data;
         this.loading = false;
-        console.log(data);
       },
       (err: HttpErrorResponse) => this.handleError(err)
     );
@@ -49,7 +48,7 @@ export class ReservationService {
   saveReservation(reserve: Reserve){
     this._http.post(`${environment.port}createReservation`, reserve).subscribe(
       () => {
-        console.log("pre-reserva guardada con éxito");
+        this.ui.openSnackBar('Pre-reserva guardada exitosamente', 'Ok', 2500);
       },
       (err: HttpErrorResponse) => {
         this.handleError(err);
