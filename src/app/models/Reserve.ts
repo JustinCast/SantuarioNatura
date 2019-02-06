@@ -14,6 +14,7 @@ export class Reserve {
     public lodging_start_date?: string,
     public lodging_finish_date?: string,
     public payment_method?: string,
-    public comment?: string
+    public comment?: string,
+    public id?: number
   ) {}
 }

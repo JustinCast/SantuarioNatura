@@ -15,10 +15,10 @@
     </div>
     <mat-card [hidden]="!verified" class="m-4">
       <mat-form-field>
-        <input matInput type="password" [(ngModel)]="user.newPassword" placeholder="{{'NewPassword' | translate}}"/>
+        <input matInput type="password" [(ngModel)]="newPassword" placeholder="{{'NewPassword' | translate}}"/>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" [(ngModel)]="user.confirmPassword" placeholder="{{'ConfirmPassword' | translate}}"/>
+        <input matInput type="password" [(ngModel)]="confirmPassword" placeholder="{{'ConfirmPassword' | translate}}"/>
       </mat-form-field>
     </mat-card>
   </div>

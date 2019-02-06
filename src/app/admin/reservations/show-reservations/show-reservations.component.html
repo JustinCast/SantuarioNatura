@@ -45,7 +45,7 @@
           <ul class="details-list">
             <li class="text-left" *ngIf="r.children !== null"><strong class="emphasis">Children: </strong>{{r.children}}</li>
             <li class="text-left"><strong class="emphasis">Activity: </strong>{{r.activity}}</li>
-            <li class="text-left"><strong class="emphasis">Activity date: </strong>{{r.activityDate | date}}</li>
+            <li class="text-left"><strong class="emphasis">Activity date: </strong>{{r.activity_date| date}}</li>
             <li class="text-left" *ngIf="r.feeding === true; else noFeeding"><strong class="emphasis">Feeding: </strong><mat-icon class="align">check_circle_outline</mat-icon></li>
             <ng-template #noFeeding>
               <li class="text-left"><strong class="emphasis">Feeding: </strong><mat-icon class="align">block</mat-icon></li>

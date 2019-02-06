@@ -12,7 +12,7 @@ export class ShowReservationsComponent implements OnInit {
   reservations: Array<Reserve>;
   constructor(
     public _reservation: ReservationService,
-    private _dialog: DialogManager
+    public _dialog: DialogManager
   ) { }
 
   ngOnInit() {

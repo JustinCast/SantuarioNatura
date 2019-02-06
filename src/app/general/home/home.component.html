@@ -2,7 +2,7 @@
 
 <app-who-we-are></app-who-we-are>
 
-<div *ngIf="activityService.activities.length>0; else LoadingActivities">
+<div *ngIf="activityService.activities && activityService.activities.length > 0; else LoadingActivities">
     <app-show-main-activities></app-show-main-activities>
 </div>
 
@@ -10,7 +10,7 @@
 
 <app-most-visited-activities></app-most-visited-activities>
 
-<div *ngIf="activityService.activities.length>0;else LoadingSpecialOffers">
+<div *ngIf="activityService.activities && activityService.activities.length > 0; else LoadingSpecialOffers">
     <app-special-offers></app-special-offers>
 </div>
 

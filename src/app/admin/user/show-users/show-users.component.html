@@ -1,5 +1,5 @@
 <div class="container">
-  <ul id="users-container" class="container" *ngIf="_userService.users.length !== 0; else loading">
+  <ul id="users-container" class="container" *ngIf="_userService.users && _userService.users.length !== 0; else loading">
     <li class="user" *ngFor="let u of _userService.users | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
       <mat-card class="text-center">
         <h4 class="text-primary">{{u.name}}</h4>
