@@ -50,6 +50,9 @@
       </div>
     </ng-template>
   </ngb-carousel>
+  <div class="container text-center">
+    <input mat-button type="file" name="single" value="Seleccionar" ng2FileSelect [uploader]="_activityService.uploader" multiple/> <br>
+  </div>
   <ng-container *ngIf="_activityService.uploader.queue">
     <hr>
     <mat-list role="list">
