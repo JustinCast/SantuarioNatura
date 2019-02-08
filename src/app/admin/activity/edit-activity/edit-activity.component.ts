@@ -36,7 +36,7 @@ export class EditActivityComponent implements OnInit {
       this.router.navigate(["/admin/show-activities"]);
     else {
       this.activity = this._activityService.activities[
-        Number(this.route.snapshot.paramMap.get("index"))
+        Number(this.route.snapshot.paramMap.get("edit"))
       ];
       if (!this.activity.images) this._image.getImages(this.activity);
     }

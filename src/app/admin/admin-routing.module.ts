@@ -20,7 +20,7 @@ const ROUTES: Routes = [
     component: AdminRootComponent,
     children: [
       { path: "add-activity", component: AddActivityComponent, canActivate: [LogguedInGuard] },
-      { path: "edit-activity/:index", component: EditActivityComponent, canActivate: [LogguedInGuard] },
+      { path: "edit-activity/:edit", component: EditActivityComponent, canActivate: [LogguedInGuard] },
       { path: "show-activities", component: ShowActivitiesComponent, canActivate: [LogguedInGuard] },
       { path: "add-user", component: AddUserComponent, canActivate: [LogguedInGuard] },
       { path: "show-users", component: ShowUsersComponent, canActivate: [LogguedInGuard] },
