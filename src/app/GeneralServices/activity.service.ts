@@ -49,7 +49,6 @@ export class ActivityService {
       .get<Array<Activity>>(`${environment.port}getAllActivities`)
       .subscribe(
         data => {
-          console.log(data);
           this.activities = data;
           this.getImagePath();
         },
