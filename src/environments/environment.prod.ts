@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  port: 'api/v1/'
+  port: 'api/v1/',
+  imgs: ''
 };

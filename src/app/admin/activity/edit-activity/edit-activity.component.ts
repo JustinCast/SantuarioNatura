@@ -6,6 +6,7 @@ import { DialogManager } from "../../../GeneralServices/dialog-manager.service";
 import { UIUtilsService } from "../../../GeneralServices/uiutils.service";
 import { FileInterface } from "../../../models/file.interface";
 import { ImageService } from "../../../GeneralServices/image.service";
+import { environment } from "src/environments/environment";
 @Component({
   selector: "app-edit-activity-dialog",
   templateUrl: "./edit-activity.component.html",
@@ -17,6 +18,7 @@ export class EditActivityComponent implements OnInit {
   access: Array<string> = ["By Car", "By Horse", "By Walking"];
   activity: Activity;
   images: Array<FileInterface>;
+  env = environment.imgs;
   constructor(
     private _activityService: ActivityService,
     private route: ActivatedRoute,
