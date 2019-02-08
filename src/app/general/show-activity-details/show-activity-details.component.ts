@@ -27,7 +27,7 @@ export class ShowActivityDetailsComponent implements OnInit {
       this._router.navigate([""]);
     } else {
       this.activity = this._activity.activities[
-        this.route.snapshot.paramMap.get("index")
+        this.route.snapshot.paramMap.get("_id")
       ];
       this._ratesService.getRates(this.activity.id);
     }
