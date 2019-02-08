@@ -20,7 +20,7 @@ export class EditActivityComponent implements OnInit {
   images: Array<FileInterface>;
   env = environment.imgs;
   constructor(
-    private _activityService: ActivityService,
+    public _activityService: ActivityService,
     private route: ActivatedRoute,
     private _dialog: DialogManager,
     private _ui: UIUtilsService,
@@ -44,6 +44,7 @@ export class EditActivityComponent implements OnInit {
 
   updateActivity() {
     this._activityService.updateActivity(this.activity);
+    this.addImages();
   }
 
   editRates() {
@@ -52,6 +53,14 @@ export class EditActivityComponent implements OnInit {
 
   deleteImage(img: FileInterface) {
     this._image.deleteImageResource(img.path, img.image_id);
+  }
+
+  addImages() {
+    this._activityService.temporaryFiles = [];
+    this._activityService.uploader.uploadAll();
+    this._activityService.uploader.response.subscribe((response: FileInterface) => {
+      this._activityService.temporaryFiles.push(response);
+    });
   }
 
   openLocDialog() {

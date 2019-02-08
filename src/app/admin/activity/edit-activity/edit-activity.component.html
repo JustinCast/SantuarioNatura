@@ -50,6 +50,20 @@
       </div>
     </ng-template>
   </ngb-carousel>
+  <ng-container *ngIf="_activityService.uploader.queue">
+    <hr>
+    <mat-list role="list">
+      <mat-list-item *ngFor="let i of _activityService.uploader.queue" role="listitem">
+        <div class="container text-left">
+          <p>{{i.file.name}}</p>
+        </div>
+        <div class="container text-right">
+          <button mat-stroked-button color="warn" (click)="i.remove()"><mat-icon>delete</mat-icon></button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <hr>
+  </ng-container>
   <div class="container pb-3 mt-3">
     <button color="accent" (click)="updateActivity()" mat-stroked-button><mat-icon>done_all</mat-icon></button>
   </div>
