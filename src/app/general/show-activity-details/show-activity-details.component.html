@@ -4,7 +4,7 @@
   <div class="container" *ngIf="_activity.activities !== undefined; else loading">
     <ngb-carousel class="shadow text-center" *ngIf="!_im.loading">
       <ng-template ngbSlide *ngFor="let a of activity.images">
-        <img src="{{env}}static/images/{{a.filename}}" width="auto" height="auto" class="container imageStyle">
+        <img src="static/images/{{a.filename}}" width="auto" height="auto" class="container imageStyle">
       </ng-template>
     </ngb-carousel>
     <hr>
