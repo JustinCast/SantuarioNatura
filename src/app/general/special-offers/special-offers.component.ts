@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImageService } from 'src/app/GeneralServices/image.service';
 import { ActivityService } from 'src/app/GeneralServices/activity.service';
 import { Activity } from 'src/app/models/Activity';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-special-offers',
@@ -11,6 +12,7 @@ import { Activity } from 'src/app/models/Activity';
 export class SpecialOffersComponent implements OnInit {
 
   specialOffersActivities: Array<Activity>;
+  env = environment.imgs;
 
   constructor(
     public activityService: ActivityService,

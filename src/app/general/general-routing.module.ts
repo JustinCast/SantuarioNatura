@@ -13,8 +13,8 @@ const ROUTES: Routes = [
     component: GeneralRootComponent,
     children: [
       { path: 'home', component: HomeComponent},
-      { path: 'activity-details/:_id', component: ShowActivityDetailsComponent},
-      { path: 'reservation/:index', component: ReservationComponent}
+      { path: 'activity-details/:name', component: ShowActivityDetailsComponent},
+      { path: 'reservation/:a_name', component: ReservationComponent}
     ]
   },
   {

@@ -2,7 +2,7 @@
   <h2 class="sentence">{{'SpecialOffers' | translate}}</h2>
   <ul>
       <li *ngFor="let a of specialOffersActivities; let index = index"class="activity card zoom shadow">
-        <img *ngIf="a.images !== undefined && a.images.length !== 0" src="static/images/{{a.images[0].filename}}" width="auto" height="auto" class="container imageStyle" >
+        <img *ngIf="a.images !== undefined && a.images.length !== 0" src="{{env}}static/images/{{a.images[0].filename}}" width="auto" height="auto" class="container imageStyle" >
         <section class="text-center">
           <h3 class="textInfoActivity mt-2"><strong>{{a.name}}</strong></h3>
           <mat-accordion >
@@ -22,8 +22,8 @@
           <p>{{a.duration}}  {{'Hours' | translate}}  </p>
         </section>
         <div class="container">
-          <button mat-raised-button class="m-1 text-accent" routerLink="../activity-details/{{index}}"><mat-icon>visibility</mat-icon></button>
-          <button mat-raised-button class="m-1 text-accent" routerLink="../reservation/{{index}}"><mat-icon>receipt</mat-icon></button>
+          <button mat-raised-button class="m-1 text-accent" routerLink="../activity-details/{{a.name}}"><mat-icon>visibility</mat-icon></button>
+          <button mat-raised-button class="m-1 text-accent" routerLink="../reservation/{{a.name}}"><mat-icon>receipt</mat-icon></button>
         </div>
       </li>
     </ul>

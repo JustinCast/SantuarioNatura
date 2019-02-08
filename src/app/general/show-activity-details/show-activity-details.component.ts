@@ -5,6 +5,7 @@ import { ImageService } from "src/app/GeneralServices/image.service";
 import { DialogManager } from "src/app/GeneralServices/dialog-manager.service";
 import { RatesService } from "src/app/GeneralServices/rates.service";
 import { Activity } from "src/app/models/Activity";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-show-activity-details",
@@ -13,6 +14,7 @@ import { Activity } from "src/app/models/Activity";
 })
 export class ShowActivityDetailsComponent implements OnInit {
   activity: Activity;
+  env = environment.imgs;
   constructor(
     public _activity: ActivityService,
     private route: ActivatedRoute,
@@ -26,9 +28,7 @@ export class ShowActivityDetailsComponent implements OnInit {
     if (this._activity.activities === undefined) {
       this._router.navigate([""]);
     } else {
-      this.activity = this._activity.activities[
-        this.route.snapshot.paramMap.get("_id")
-      ];
+      this.activity = this._activity.activities.find(a => a.name === String(this.route.snapshot.paramMap.get("a_name")));
       this._ratesService.getRates(this.activity.id);
     }
   }

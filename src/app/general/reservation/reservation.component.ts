@@ -76,9 +76,7 @@ export class ReservationComponent implements OnInit {
     if (this._activity.activities === undefined) {
       this._router.navigate([""]);
     } else {
-      this.activity = this._activity.activities[
-        this.route.snapshot.paramMap.get("index")
-      ];
+      this.activity = this._activity.activities.find(a => a.name === String(this.route.snapshot.paramMap.get("a_name")));
     }
 
     this._reservationService.getActivities();
