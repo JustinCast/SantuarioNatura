@@ -59,6 +59,7 @@ export class UserService {
         },
         (err: HttpErrorResponse) => {
           this.handleError(err);
+          this.ui.openSnackBar("Error de inicio de sesión", "Ok", 2500);
         }
       );
   }

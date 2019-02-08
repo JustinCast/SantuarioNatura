@@ -89,8 +89,7 @@ function updatePassword(req, res) {
 function sendMail(body) {
   const sgMail = require("@sendgrid/mail");
   sgMail.setApiKey(
-    process.env.SENDGRID_API_KEY ||
-      "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"
+    process.env.SENDGRID_API_KEY
   );
   const msg = {
     to: body.to,

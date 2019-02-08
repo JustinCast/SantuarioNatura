@@ -21,7 +21,7 @@ export class ActivityService {
   loading: boolean = false;
   activitiesName: Array<any> = [];
   public uploader: FileUploader = new FileUploader({
-    url: `${environment.port}/api/v1/upload`
+    url: `${environment.port}upload`
   });
   constructor(
     private _http: HttpClient,
