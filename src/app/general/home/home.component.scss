@@ -8,13 +8,30 @@ h5{
     text-align: center;
     margin: 5% auto 1% auto;
 }
-h1{
-  color: green !important;
-  border: 0.5px dashed;
-  border-radius: 25px;
-  width: 60%;
-  margin: auto;
-  margin-bottom: 2%;
-  padding: 3%;
-  border-color: $primary-color-dark
+@media screen and (min-width: 601px) {
+    h1{
+        color: green !important;
+        border: 0.5px dashed;
+        border-radius: 25px;
+        width: 60%;
+        margin: auto;
+        margin-bottom: 2%;
+        padding: 3%;
+        border-color: $primary-color-dark
+    }
 }
+
+@media screen and (max-width: 700px) {
+    h1{
+        color: green !important;
+        border: 0.5px dashed;
+        border-radius: 25px;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 2%;
+        padding: 3%;
+        border-color: $primary-color-dark;
+        font-size:20px;
+    }
+}
+
