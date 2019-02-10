@@ -78,8 +78,8 @@ export class DialogManager {
 
   public openDevsInfo() {
     this.dialog.open(DevsInfoComponent, {
-      width: "70%",
-      height: "70%",
+      width: "99%",
+      height: "84%",
       panelClass: "dialog"
     });
   }
