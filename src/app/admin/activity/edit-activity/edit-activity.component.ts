@@ -44,6 +44,7 @@ export class EditActivityComponent implements OnInit {
 
   updateActivity() {
     this._activityService.updateActivity(this.activity);
+    this._activityService.lastSavedActivity_id = this.activity.id;
     this.addImages();
   }
 
@@ -60,6 +61,8 @@ export class EditActivityComponent implements OnInit {
     this._activityService.uploader.uploadAll();
     this._activityService.uploader.response.subscribe((response: FileInterface) => {
       this._activityService.temporaryFiles.push(response);
+      this._activityService.makeImageRequest();
+      this._activityService.uploader.clearQueue();
     });
   }
 

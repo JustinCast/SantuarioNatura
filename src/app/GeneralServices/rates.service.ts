@@ -17,7 +17,6 @@ export class RatesService {
     ) {}
 
   getRates(id_activity: number): void {
-    console.log(id_activity);
      this._http.get<Array<Rate>>(
       `${environment.port}getRates/${id_activity}`
     ).subscribe(

@@ -16,7 +16,7 @@ export class ActivityService {
 
   bestFourActivities: Array<any> = [];
   activities: Array<any>;
-  lastSavedActivity_id: number;
+  public lastSavedActivity_id: number;
   temporaryFiles: Array<FileInterface> = [];
   loading: boolean = false;
   activitiesName: Array<any> = [];
