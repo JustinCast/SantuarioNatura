@@ -78,6 +78,22 @@
     }
 }
 
+@media screen and (min-width: 601px) {
+    .button-text {
+        text-align: center;
+        color: $accent-color;
+        font-size: 17px;
+    }   
+}
+
+@media screen and (max-width: 700px) {
+    .button-text{
+        text-align: center;
+        color: $accent-color;
+        font-size: 14px;
+    }
+}
+
 button,section{
     margin: 3%;
 }
