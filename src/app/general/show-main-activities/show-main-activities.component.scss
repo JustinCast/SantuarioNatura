@@ -1,5 +1,9 @@
 @import "../../ui-utils/variables";
 
+h2{
+  color: $accent-color;
+}
+
 @media screen and (min-width: 601px) {
   .activity {
     width: 35%;

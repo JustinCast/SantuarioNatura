@@ -1,31 +1,32 @@
+
+
 <div class="text-center">
   <h2 class="sentence">{{'SpecialOffers' | translate}}</h2>
   <ul>
-      <li *ngFor="let a of specialOffersActivities; let index = index"class="activity card zoom shadow">
-        <img *ngIf="a.images !== undefined && a.images.length !== 0" src="static/images/{{a.images[0].filename}}" width="auto" height="auto" class="container imageStyle" >
-        <section class="text-center">
-          <h3 class="textInfoActivity mt-2"><strong>{{a.name}}</strong></h3>
-          <mat-accordion >
-            <mat-expansion-panel hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-description>
-                  <strong class="text-accent">{{'Description' | translate}}</strong>
-                  <mat-icon class="text-accent">expand_more</mat-icon>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <div id="description" class="cotainer text-left">
-                  {{a.description}}
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
-          <strong>{{'Duration' | translate}}</strong>
-          <p>{{a.duration}}  {{'Hours' | translate}}  </p>
-        </section>
-        <div class="container">
-          <button mat-raised-button class="m-1 text-accent" routerLink="../activity-details/{{index}}"><mat-icon>visibility</mat-icon></button>
-          <button mat-raised-button class="m-1 text-accent" routerLink="../reservation/{{index}}"><mat-icon>receipt</mat-icon></button>
-        </div>
-      </li>
-    </ul>
+    <li *ngFor="let a of specialOffersActivities; let index = index"class="activity card zoom shadow">
+      <section class="text-center">
+        <h3 class="textInfoActivity mt-2"><strong>{{a.name}}</strong></h3>
+        <mat-accordion >
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-description>
+                <strong class="text-accent">{{'Description' | translate}}</strong>
+                <mat-icon class="text-accent">expand_more</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div id="description">
+                {{a.description}}
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <strong>{{'Duration' | translate}}</strong>
+        <p>{{a.duration}}  {{'Hours' | translate}}</p>
+      </section>
+      <div class="container-buttons">
+        <button mat-raised-button class="m-1 text-accent" routerLink="../activity-details/{{index}}">{{'ReadMore' | translate}}</button>
+        <button mat-raised-button class="m-1 text-accent" routerLink="../reservation/{{index}}">{{'PreReservation' | translate}}</button>
+      </div>
+    </li>
+  </ul>
 </div>
-
+  
