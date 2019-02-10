@@ -2,6 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
+
+var secure = require('ssl-express-www');
+app.use(secure);
+
 var multer = require("multer");
 const fs = require('fs');
 
