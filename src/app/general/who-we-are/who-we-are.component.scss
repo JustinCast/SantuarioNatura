@@ -1,20 +1,83 @@
 @import '../../ui-utils/variables';
 //---------------Who we are
 
-#firstWhoWeAreCont {
-    margin: 3% 2% 3% 2%;
-    text-align: center;
+@media screen and (min-width: 601px) {
+    #firstWhoWeAreCont {
+        margin: 3% 2% 3% 2%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #firstWhoWeAreCont {
+        margin: 1% 2% 1% 2%;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .sentence {
+        text-align: center;
+        margin: 2%;
+        color: $accent-color;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sentence{
+        color: $accent-color;
+        text-align: center;
+        margin: 2%;
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .textCenterItalic {
+        font-size: 20px;
+        font-style: italic;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .textCenterItalic {
+        font-size: 14px;
+        font-style: italic;
+        text-align: justify;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    #secondWhoWeAreCont {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #secondWhoWeAreCont {
+        width: 100%;
+        text-align: center;
+    }
 }
   
-#secondWhoWeAreCont {
-    text-align: center;
+@media screen and (min-width: 601px) {
+    .cardWhoWeAre {
+        width: 30%;
+        border-radius: 0.3cm;
+        margin: 1%;
+        display: inline-block;
+    }
 }
-  
-.cardWhoWeAre {
-    width: 30%;
-    border-radius: 0.3cm;
-    margin: 1%;
-    display: inline-block;
+
+@media screen and (max-width: 700px) {
+    .cardWhoWeAre {
+        width: 48%;
+        border-radius: 0.3cm;
+        margin: 1%;
+        display: inline-block;
+    }
 }
   
 .imageStyleWhoWeAre {
@@ -23,17 +86,7 @@
     padding: 0px;
 }
 
-.sentence {
-    text-align: center;
-    margin: 2%;
-}
 
-.textCenterItalic {
-    font-size: 120%;
-    font-style: italic;
-    text-align: center;
-}
 
-h2{
-    color: $accent-color;
-}
+
+
