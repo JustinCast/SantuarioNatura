@@ -56,9 +56,21 @@ h2{
   text-align: center;
 }
 
-.sentence {
-  text-align: center;
-  margin: 2%;
+@media screen and (min-width: 601px) {
+  .sentence {
+      text-align: center;
+      margin: 2%;
+      color: $accent-color;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sentence{
+      color: $accent-color;
+      text-align: center;
+      margin: 2%;
+      font-size: 25px;
+  }
 }
 
 mat-expansion-panel{

@@ -1,21 +1,47 @@
 @import '../../ui-utils/variables';
 
-.sentence {
-    text-align: center;
-    margin: 2%;
+
+@media screen and (min-width: 601px) {
+    mat-card{
+        width: 40%;
+        margin: auto;
+        margin-bottom: 1%;
+        background-color: $primary-color-dark;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    mat-card{
+        width: 85%;
+        margin: auto;
+        margin-bottom: 2%;
+        background-color: $primary-color-dark;
+        padding: 4px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .sentence {
+        text-align: center;
+        margin: 2%;
+        color: $accent-color;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sentence{
+        color: $accent-color;
+        text-align: center;
+        margin: 2%;
+        font-size: 25px;
+    }
 }
 
 .textCenterItalic {
     font-size: 120%;
     font-style: italic;
     text-align: center;
-}
-
-mat-card{
-    width: 40%;
-    margin: auto;
-    margin-bottom: 1%;
-    background-color: $primary-color-dark;
 }
 
 h2{
