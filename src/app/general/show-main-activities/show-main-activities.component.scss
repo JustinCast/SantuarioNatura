@@ -1,12 +1,23 @@
 @import "../../ui-utils/variables";
 
-.activity {
-  width: 40%;
-  border-radius: 0.1cm 0.1cm 0.1cm 0.1cm;
-  margin: 1%;
-  display: inline-block;
-  background-color: $secondary-color;
-  padding: 1%;
+@media screen and (min-width: 601px) {
+  .activity {
+    width: 35%;
+    border-radius: 0.1cm 0.1cm 0.1cm 0.1cm;
+    margin: 1%;
+    display: inline-block;
+    background-color: $secondary-color;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .activity {
+    width: 94%;
+    border-radius: 0.1cm 0.1cm 0.1cm 0.1cm;
+    margin: 3%;
+    background-color: $secondary-color;
+    text-align: center;
+  }
 }
 
 .textInfoActivity {
@@ -55,5 +66,24 @@ button{
 }
 
 #description{
-  padding: 4%;
+  text-align: justify;
+  margin-top: 1%;
+}
+
+li {
+	margin: 0px;
+	padding: 0px;
+	
+}
+ul {
+	margin: 0px;
+	padding: 0px;
+} 
+
+.container-buttons{
+  margin: 2%;
+}
+
+p{
+  margin-bottom: 0px;
 }
