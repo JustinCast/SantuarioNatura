@@ -4,20 +4,56 @@
 #servicesOfferedCont {
     text-align: center;
 }
-  
-.service {
-    display: inline-block;
-    margin: 1% 25% 0% 25%;
+
+@media screen and (min-width: 601px) {
+    .service {
+        display: inline-block;
+        margin: 1% 25% 0% 25%;
+    }
 }
 
-.sentence {
-    text-align: center;
-    margin: 2%;
+@media screen and (max-width: 700px) {
+    .service {
+        display: inline-block;
+        margin: 1% 4% 0% 4%;
+    }
 }
 
-p{
-    margin: 2% 0% 2% 0%;
+@media screen and (min-width: 601px) {
+    p{
+        margin: 2% 0% 2% 0%;
+        font-size: 20px;
+        text-align: justify;
+    }
 }
+
+@media screen and (max-width: 700px) {
+    p{
+        margin: 2% 0% 2% 0%;
+        font-size: 14px;
+        text-align: justify;
+    }
+}
+
+
+@media screen and (min-width: 601px) {
+    .sentence {
+        text-align: center;
+        margin: 2%;
+        color: $accent-color;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .sentence{
+        color: $accent-color;
+        text-align: center;
+        margin: 2%;
+        font-size: 25px;
+    }
+}
+
+
 
 h2{
     color: $accent-color;
