@@ -8,14 +8,14 @@
       </ng-template>
     </ngb-carousel>
     <hr>
-    <p class="text-center text-secondary">{{activity.description}}</p>
+    <p>{{activity.description}}</p>
     <hr>
   </div>
 
   <div id="infoActivity">
     <span class="infoSectionActivity shadow-sm p-2">
       <b>{{'Duration' | translate}}</b>
-      <p>{{activity.duration}} {{'Hours' | translate}}</p>
+      <p class="text-center">{{activity.duration}} {{'Hours' | translate}}</p>
       <b>{{'Includes' | translate}}</b>
       <p>{{activity.includes}}</p>
       <table class="table table-striped" cellspacing="1" cellpadding="1"
@@ -30,23 +30,23 @@
         </tr>
         <tr *ngFor="let element of _ratesService.entryAndTariff">
           <th>
-            <p>{{element._from}} - {{element._to}}</p>
+            <p class="text-center">{{element._from}} - {{element._to}}</p>
           </th>
           <th>
-            <p>{{element._rate}}$</p>
+            <p class="text-center">{{element._rate}}$</p>
           </th>
         </tr>
       </table>
     </span>
     <span class="infoSectionActivity shadow-sm p-2">
         <b>{{'Difficultly' | translate}}</b>
-        <p>{{activity.difficulty}}</p>
+        <p class="text-center">{{activity.difficulty}}</p>
         <b>{{'Bring' | translate}}</b>
         <p>{{activity.bring}}</p>
         <b>{{'Access' | translate}}</b>
-        <p>{{activity.access}}</p>
-        <b>{{'Location' | translate}}</b>
-        <button mat-raised-button (click)="seeLocation();">Map</button>
+        <p class="text-center">{{activity.access}}</p>
+        <!--<b>{{'Location' | translate}}</b>
+        <button mat-raised-button (click)="seeLocation();">Map</button>-->
     </span>
   </div>
 </div>

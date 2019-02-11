@@ -1,6 +1,6 @@
 <ul id="contact-list" class="container text-center mt-5">
   <li id="main-contact-info" class="contact-item shadow-sm mb-4">
-    <h4 class="text-black">{{ "WeAreLocated" | translate }}</h4>
+    <h4 class="text-black sentence">{{ "WeAreLocated" | translate }}</h4>
     <ul id="details" class="container text-left">
       <li class="detail"><mat-icon class="align green-color-icon">phone</mat-icon><strong> (+506) </strong>8616 - 7411</li>
       <li class="detail"><mat-icon class="align green-color-icon">mail</mat-icon> info@santuarionatura.com</li>
@@ -13,7 +13,7 @@
   </li>
   <li class="contact-item shadow-sm">
     <form [formGroup]="sendEmailFG" class="p-2" (ngSubmit)="sendEmail();">
-      <h4  class="text-dark">{{'OrSendUs' | translate}}</h4>
+      <h4  class="text-dark sentence">{{'OrSendUs' | translate}}</h4>
       <mat-form-field>
         <input matInput type="email" [formControl]="sendEmailFG.get('from')" placeholder="{{'From' | translate}}">
       </mat-form-field>

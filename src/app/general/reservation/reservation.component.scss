@@ -1,18 +1,34 @@
 @import '../../ui-utils/variables';
 
-#reservationContainer{
-    text-align: center;
-    width: 70%;
-    margin: auto auto 3% auto;
-    padding: 3% 6% 3% 6%;
-    background-color: $secondary-color;
+@media screen and (min-width: 601px) {
+    #reservationContainer{
+        text-align: center;
+        width: 70%;
+        margin: auto auto 3% auto;
+        padding: 3% 2% 3% 2%;
+        background-color: $secondary-color;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #reservationContainer{
+        text-align: center;
+        width: 100%;
+        margin: auto auto 3% auto;
+        padding: 3% 2% 3% 2%;
+        background-color: $secondary-color;
+    }
+}
+
+form{
+    padding: 4%;
 }
 
 .element{
     margin: 2% 1% 2% 1%;
 }
 
-h3{
+h4{
     margin: 1% auto 1% auto;
     color: $accent-color;
 }

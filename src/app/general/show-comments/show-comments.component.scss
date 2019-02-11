@@ -1,34 +1,97 @@
 @import '../../ui-utils/variables';
 
+@media screen and (min-width: 601px) {
+    ngb-carousel {
+        margin: auto;
+        width: 70%;
+        margin-top: 0;
+        background-color:$primary-color-dark;
+        padding: 2%;
+        border-radius: 10px;
+        top: 0;
+    }
+}
+  
+@media screen and (max-width: 700px) {
+    ngb-carousel {
+        margin: auto;
+        width: 90%;
+        margin-top: 0;
+        background-color:$primary-color-dark;
+        padding: 2%;
+        border-radius: 10px;
+        top: 0;
+    }
+}
+
 #comments{
     text-align: center;
-    margin: 2% 0% 2% 0%;
+    margin: 1% 0% 1% 0%;
 }
 
-.author{
-    margin-top: 2%;
-    font-size: 20px;
-    color: $accent-color;
+
+@media screen and (min-width: 601px) {
+    .author{
+        margin-top: 2%;
+        font-size: 22px;
+        color: $accent-color;
+    }  
 }
 
-.textComment{
-    margin-top: 2%;
-    font-size: 22px;
+@media screen and (max-width: 700px) {
+    .author{
+        margin-top: 2%;
+        font-size: 18px;
+        color: $accent-color;
+    }
 }
 
-.sentence {
-    text-align: center;
-    margin: 2%;
+
+@media screen and (min-width: 601px) {
+    .textComment{
+        margin-top: 2%;
+        font-size: 22px;
+    }  
 }
 
-ngb-carousel {
-    margin: auto;
-    width: 60%;
-    margin-top: 0;
-    background-color:$primary-color-dark;
-    padding: 2%;
-    border-radius: 10px;
-    top: 0;
+@media screen and (max-width: 700px) {
+    .textComment{
+        margin-top: 2%;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .sentence {
+        text-align: center;
+        margin: 2%;
+        color: $accent-color;
+    }   
+}
+
+@media screen and (max-width: 700px) {
+    .sentence{
+        color: $accent-color;
+        text-align: center;
+        margin: 2%;
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .button-text {
+        text-align: center;
+        color: $accent-color;
+        font-size: 17px;
+    }   
+}
+
+@media screen and (max-width: 700px) {
+    .button-text{
+        text-align: center;
+        color: $accent-color;
+        font-size: 14px;
+    }
 }
 
 button,section{

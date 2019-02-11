@@ -60,7 +60,7 @@
   "Submit": "Submit",
   "PreReservation": "Pre-reservation",
   "ServicesWeOffer": "Services we offer",
-  "WhoWeAre": "Who we are?",
+  "WhoWeAre": "Who are we?",
   "SocialNetworks": "Social networks",
   "SpecialOffers": "Special offers",
   "MostVisitedActivities": "Most visited activities",
@@ -109,5 +109,6 @@
   "LoadingSpecialOffers": "Loading special offers",
   "Loading": "Loading",
   "Comment": "Comentario",
-  "Slogan": "Come and live it in community"
+  "Slogan": "Come and live it in community",
+  "ReadMore":"Read more"
 }

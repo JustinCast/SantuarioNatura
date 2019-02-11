@@ -1,16 +1,29 @@
 @import "../../ui-utils/variables";
 
+@media screen and (min-width: 601px) {
+  .contact-item {
+    display: block;
+    width: 45%;
+    margin: auto auto 3% auto;
+    background-color: $secondary-color-gray;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contact-item {
+    display: block;
+    width: 90%;
+    margin: auto auto 3% auto;
+    background-color: $secondary-color-gray;
+  }
+}
+
 #contact-list {
+  margin-top: 1%;
   list-style-type: none;
   padding: 0;
 }
 
-.contact-item {
-  display: block;
-  width: 45%;
-  margin: auto auto 3% auto;
-  background-color: $secondary-color-gray;
-}
 .green-color-icon{
   color: green;
 }
@@ -53,9 +66,22 @@ form, #main-contact-info{
 mat-form-field{
   width: 90%;
 }
-h4{
-  color: green !important;
-  margin: 4%;
+
+@media screen and (min-width: 601px) {
+  .sentence {
+    text-align: center;
+    color: green !important;
+    margin: 4%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sentence{
+    text-align: center;
+    font-size: 20px;
+    color: green !important;
+    margin: 4%;
+  }
 }
 
 #seeLoc{

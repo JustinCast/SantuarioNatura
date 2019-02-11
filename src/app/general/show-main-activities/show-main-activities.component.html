@@ -13,17 +13,17 @@
                 <mat-icon class="text-accent">expand_more</mat-icon>
               </mat-panel-description>
             </mat-expansion-panel-header>
-            <div id="description" class="cotainer text-left">
+            <div id="description">
                 {{a.description}}
             </div>
           </mat-expansion-panel>
         </mat-accordion>
         <strong>{{'Duration' | translate}}</strong>
-        <p>{{a.duration}}  {{'Hours' | translate}}  </p>
+        <p>{{a.duration}}  {{'Hours' | translate}}</p>
       </section>
-      <div class="container">
-        <button mat-raised-button class="m-1 text-accent" routerLink="../activity-details/{{a.name}}"><mat-icon>visibility</mat-icon></button>
-        <button mat-raised-button class="m-1 text-accent" routerLink="../reservation/{{a.name}}"><mat-icon>receipt</mat-icon></button>
+      <div class="container-buttons">
+        <button mat-raised-button class="m-1 text-accent" routerLink="../activity-details/{{index}}">{{'ReadMore' | translate}}</button>
+        <button mat-raised-button class="m-1 text-accent" routerLink="../reservation/{{index}}">{{'PreReservation' | translate}}</button>
       </div>
     </li>
   </ul>
