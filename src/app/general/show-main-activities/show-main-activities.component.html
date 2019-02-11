@@ -22,8 +22,8 @@
         <p>{{a.duration}}  {{'Hours' | translate}}</p>
       </section>
       <div class="container-buttons">
-        <button mat-raised-button class="m-1 text-accent" routerLink="../activity-details/{{index}}">{{'ReadMore' | translate}}</button>
-        <button mat-raised-button class="m-1 text-accent" routerLink="../reservation/{{index}}">{{'PreReservation' | translate}}</button>
+        <button mat-raised-button class="m-1 text-accent" routerLink="../activity-details/{{a.name}}">{{'ReadMore' | translate}}</button>
+        <button mat-raised-button class="m-1 text-accent" routerLink="../reservation/{{a.name}}">{{'PreReservation' | translate}}</button>
       </div>
     </li>
   </ul>
