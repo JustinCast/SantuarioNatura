@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
 
-var enforce = require('express-sslify');
-app.use(enforce.HTTPS());
+// var enforce = require('express-sslify');
+// app.use(enforce.HTTPS());
 
 var multer = require("multer");
 const fs = require('fs');
