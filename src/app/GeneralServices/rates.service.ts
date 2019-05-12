@@ -9,7 +9,7 @@ import { Rate } from "../models/Rate";
 })
 export class RatesService {
 
-  entryAndTariff: Array<any> = [];
+  public entryAndTariff: Array<any> = [];
 
   constructor(
     private _http: HttpClient,
