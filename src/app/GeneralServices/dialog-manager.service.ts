@@ -30,9 +30,10 @@ export class DialogManager {
 
   public open() {
     let dialogRef: MatDialogRef<LoginComponent>;
+    console.log(window.innerHeight)
     dialogRef = this.dialog.open(LoginComponent, {
-      width: "40%",
-      height: "50%",
+      width: `${window.innerWidth < 400 ? '90%' : '50%'}`,
+      height: `${window.innerHeight <= 812 ? '55%' : '50%'}`,
       panelClass: "dialog"
     });
     return dialogRef.afterClosed();

@@ -25,7 +25,7 @@
   </table>
   <hr>
   <br>
-  <table class="table container shadow-sm rounded" *ngIf="rates && rates.length !== 0">
+  <table class="table container shadow-sm rounded" *ngIf="newRates && newRates.length !== 0">
     <thead class="thead-dark">
       <tr class="container text-center">
         <th scope="col">From</th>
@@ -35,12 +35,12 @@
       </tr>
     </thead>
     <tbody class="container text-center">
-      <tr *ngFor="let r of rates; let i = index">
+      <tr *ngFor="let r of newRates; let i = index">
         <td>{{r._from}}</td>
         <td>{{r._to}}</td>
         <td>{{r._rate}}</td>
         <td>
-          <button mat-button color="warn" (click)="rates.splice(i, 1); false"><mat-icon>delete</mat-icon></button>
+          <button mat-button color="warn" (click)="newRates.splice(i, 1); false"><mat-icon>delete</mat-icon></button>
         </td>
       </tr>
     </tbody>

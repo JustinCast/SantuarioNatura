@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { MatDialogRef } from "@angular/material";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { UserService } from "../../GeneralServices/user.service";
@@ -8,7 +8,7 @@ import { UserService } from "../../GeneralServices/user.service";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
   loginFG: FormGroup;
   icon: string = "priority_high";
   panelOpenState = false;
@@ -29,6 +29,10 @@ export class LoginComponent implements OnInit {
       if (!this.loginFG.valid) this.icon = "priority_high";
       else this.icon = "done";
     });
+  }
+  
+
+  ngAfterViewInit() {
   }
 
   onSubmit() {

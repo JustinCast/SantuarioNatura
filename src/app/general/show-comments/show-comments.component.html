@@ -1,4 +1,4 @@
-<div id="comments" *ngIf="_commentService.comments.length>0; else loading">
+<div id="comments">
   <h2 class="sentence">{{'Testimonies' | translate}}</h2>
   <ngb-carousel>
     <ng-template ngbSlide *ngFor="let auxComment of _commentService.comments">
@@ -23,8 +23,3 @@
     {{'LeaveACommentary' | translate}}
   </button>
 </div>
-
-<ng-template #loading>
-  <h5>{{'LoadingComments' | translate}}</h5>
-  <mat-progress-bar mode="buffer"></mat-progress-bar>
-</ng-template>

@@ -1,6 +1,6 @@
 const db = require("../config/config");
 function saveReservation(req, res) {
-  db.none(
+  db.any(
     "SELECT insert_reservation(${name},${email},${phone},${country},${adults},${children},${activity},${activityDate},${feeding},${transport},${lodging},${lodgingStartDate},${lodingFinishDate},${paymentMethod},${comment});",
     {
       name: req.body.name,
@@ -35,7 +35,7 @@ function getReservations(req, res) {
 }
 
 function deleteReservation(req, res) {
-  db.none("SELECT * FROM delete_reservation($1)", [req.params.id])
+  db.any("SELECT * FROM delete_reservation($1)", [req.params.id])
   .then(() => res.status(200).send(true))
   .catch(error => errHandler("DELETE RESERVATION", res, error));
 }

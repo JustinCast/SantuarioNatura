@@ -21,6 +21,7 @@ export class RatesService {
       `${environment.port}getRates/${id_activity}`
     ).subscribe(
       data => {
+        console.log(data);
         this.entryAndTariff = data;
       },
       (err: HttpErrorResponse) => {

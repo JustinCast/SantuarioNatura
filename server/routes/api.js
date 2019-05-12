@@ -21,7 +21,7 @@ api.delete("/deleteComment/:id", commentsQueries.deleteComment);
 api.post("/createReservation", reservationQueries.saveReservation);
 api.get("/getActivities", activitiesQueries.getActivities);
 api.get("/getReservations", reservationQueries.getReservations);
-api.get("/deleteReservation/:id", reservationQueries.deleteReservation);
+api.delete("/deleteReservation/:id", reservationQueries.deleteReservation);
 
 // users endpoints
 api.get("/recoveryPassword/:username", userQueries.recoveryPassword);

@@ -41,11 +41,12 @@ export class EditRatesComponent implements OnInit {
 
   addRate() {
     this.newRates.unshift(
-      new Rate(this.ratesGroup.get("from").value),
+      new Rate(this.ratesGroup.get("from").value,
       this.ratesGroup.get("to").value,
       this.ratesGroup.get("rate").value,
       this.id_activity
-    );
+      ));
+    console.log(this.newRates)
   }
 
   onSubmit() {
