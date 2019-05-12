@@ -79,8 +79,8 @@ export class DialogManager {
 
   public openDevsInfo() {
     this.dialog.open(DevsInfoComponent, {
-      width: "99%",
-      height: "84%",
+      width: `${window.innerWidth < 400 ? '95%' : '50%'}`,
+      height: `${window.innerHeight <= 812 ? '55%' : '50%'}`,
       panelClass: "dialog"
     });
   }
@@ -101,8 +101,8 @@ export class DialogManager {
 
   public commentDialog() {
     return this.dialog.open(CommentsComponent, {
-      width: "40%",
-      height: "50%",
+      width: `${window.innerWidth < 400 ? '90%' : '50%'}`,
+      height: `${window.innerHeight <= 812 ? '55%' : '50%'}`,
       panelClass: "dialog"
     });
   }
