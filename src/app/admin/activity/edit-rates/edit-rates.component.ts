@@ -14,7 +14,7 @@ export class EditRatesComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<EditRatesComponent>,
     private _fb: FormBuilder,
-    private _rate: RatesService,
+    public _rate: RatesService,
     @Inject(MAT_DIALOG_DATA) public id_activity: any
   ) {
     this.ratesGroup = this._fb.group({
