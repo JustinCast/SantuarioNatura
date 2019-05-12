@@ -43,19 +43,23 @@ export class UserService {
       .subscribe(
         response => {
           this.loading = false;
-          let data = response.data[0];
-          if (response.login) {
-            this.auth.login(
-              new User(
-                data.name,
-                data.username,
-                data.password,
-                data.role,
-                data.id
-              )
-            );
-            this.ui.openSnackBar("Logueado correctamente", "Ok", 2500);
+          if(response.length > 0){
+            let data = response.data[0];
+            if (response.login) {
+              this.auth.login(
+                new User(
+                  data.name,
+                  data.username,
+                  data.password,
+                  data.role,
+                  data.id
+                )
+              );
+              this.ui.openSnackBar("Logueado correctamente", "Ok", 2500);
+            }
           }
+          else
+            this.ui.openSnackBar("Credenciales incorrectas", "Ok", 2500);
         },
         (err: HttpErrorResponse) => {
           this.handleError(err);
