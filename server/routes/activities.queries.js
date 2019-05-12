@@ -11,7 +11,6 @@ function getAllActivities(req, res, next) {
 
 function saveActivity(req, res, next) {
   let db = require("../config/config");
-  console.log(req.body);
   db.any(
     "INSERT INTO activity (name, description, difficulty, includes, duration, bring, location, access, visits, in_offer) VALUES(${name}, ${description}, ${difficulty}, ${includes}, ${duration}, ${bring}, ${location}, ${access}, ${visits}, ${in_offer})",
     {
@@ -59,7 +58,6 @@ function getBestFourActivities(req, res, next) {
 }
 
 function updateActivity(req, res) {
-  console.log(req.body);
   db.none(
     "UPDATE activity SET name = ${name}," +
       "description = ${description}," +

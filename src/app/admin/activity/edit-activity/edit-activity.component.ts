@@ -63,6 +63,7 @@ export class EditActivityComponent implements OnInit {
       this._activityService.temporaryFiles.push(response);
       this._activityService.makeImageRequest();
       this._activityService.uploader.clearQueue();
+      console.log(response);
     });
   }
 
