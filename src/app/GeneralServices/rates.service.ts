@@ -16,6 +16,7 @@ export class RatesService {
     private _ui: UIUtilsService
     ) {}
 
+
   getRates(id_activity: number): void {
      this._http.get<Array<Rate>>(
       `${environment.port}getRates/${id_activity}`
