@@ -61,7 +61,10 @@ export class ReservationService {
       .delete(`${environment.port}deleteReservation/${id}`)
       .subscribe(
         () =>
-          this.ui.openSnackBar("Reservación eliminada con éxito", "Ok", 2500),
+          {
+            this.ui.openSnackBar("Reservación eliminada con éxito", "Ok", 2500);
+            this.reservations.splice(this.reservations.findIndex(r => r.id === id), 1);
+          },
         (err: HttpErrorResponse) => this.handleError(err)
       );
   }

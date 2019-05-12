@@ -32,7 +32,7 @@ function updateRate(req, res) {
 }
 
 function deleteRate(req, res) {
-  db.none("SELECT delete_rate_and_quotas(${id})", {id: req.params.id})
+  db.any("SELECT delete_rate_and_quotas(${id})", {id: req.params.id})
     .then(() => res.status(200).send(true))
     .catch(error => errHandler("deleteRate", res, error));
 }

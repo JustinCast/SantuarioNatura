@@ -1,4 +1,4 @@
-<ul id="reservations-container" class="container text-center" *ngIf="_reservation.reservations.length>0; else loading">
+<ul id="reservations-container" class="container text-center" *ngIf="_reservation.reservations.length > 0; else loading">
   <li class="reservation card rounded m-1 shadow p-2" *ngFor="let r of _reservation.reservations">
     <div class="rounded" id="header">
       <strong>{{'Customer' | translate}} </strong>{{r.name}}
@@ -80,6 +80,6 @@
 </ul>
 
 <ng-template #loading>
-  <h5>{{'LoadingReservations' | translate}}</h5>
+  <h5>Cargando datos... <i>(si tarda mucho es posible que no hayan reservaciones)</i></h5>
   <mat-progress-bar mode="buffer"></mat-progress-bar>
 </ng-template>

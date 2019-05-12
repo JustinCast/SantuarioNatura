@@ -43,7 +43,7 @@ export class UserService {
       .subscribe(
         response => {
           this.loading = false;
-          if(response.length > 0){
+          if(response.data[0].name !== undefined){
             let data = response.data[0];
             if (response.login) {
               this.auth.login(

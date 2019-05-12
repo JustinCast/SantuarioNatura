@@ -9,14 +9,13 @@ import { DialogManager } from 'src/app/GeneralServices/dialog-manager.service';
   styleUrls: ['./show-reservations.component.scss']
 })
 export class ShowReservationsComponent implements OnInit {
-  reservations: Array<Reserve>;
   constructor(
     public _reservation: ReservationService,
     public _dialog: DialogManager
   ) { }
 
   ngOnInit() {
-    if(!this.reservations){
+    if(! this._reservation.reservations){
       this._reservation.getReservations();
       this._reservation.loading = true;
     }
