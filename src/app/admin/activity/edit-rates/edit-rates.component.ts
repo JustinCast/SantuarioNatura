@@ -10,8 +10,6 @@ import { RatesService } from "../../../GeneralServices/rates.service";
   styleUrls: ["./edit-rates.component.scss"]
 })
 export class EditRatesComponent implements OnInit {
-  rates: Array<Rate>;
-  newRates: Array<Rate> = [];
   ratesGroup: FormGroup;
   constructor(
     public dialogRef: MatDialogRef<EditRatesComponent>,
@@ -27,29 +25,31 @@ export class EditRatesComponent implements OnInit {
   }
 
   ngOnInit() {
-    /*this._rate
-      .getRates(this.id_activity)
-      .subscribe(
-        r => (this.rates = r),
-        (err: HttpErrorResponse) => this._rate.handleError(err)
-      );*/
+    this._rate.getRates(this.id_activity);
   }
 
-  deleteRate(index: number) {
-    this._rate.deleteRate(this.rates[index]._id);
+  deleteRate(element, index) {
+    if (element._id !== undefined) {
+      this._rate.deleteRate(element._id);
+      this._rate.getRates(this.id_activity);
+    } else {
+      this._rate.entryAndTariff.splice(index, 1)
+    }
   }
 
   addRate() {
-    this.newRates.unshift(
+    this._rate.entryAndTariff.unshift(
       new Rate(this.ratesGroup.get("from").value,
-      this.ratesGroup.get("to").value,
-      this.ratesGroup.get("rate").value,
-      this.id_activity
+        this.ratesGroup.get("to").value,
+        this.ratesGroup.get("rate").value,
+        this.id_activity,
+        undefined
       ));
-    console.log(this.newRates)
   }
 
   onSubmit() {
-    this.newRates.forEach(r => this._rate.saveRate(r));
+    this._rate.entryAndTariff.forEach(r => {
+      this._rate.saveRate(r);
+    });
   }
 }
