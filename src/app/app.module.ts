@@ -35,9 +35,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     RouterModule.forRoot(ROUTES),
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
   })
   ],

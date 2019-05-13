@@ -1,6 +1,6 @@
 <div id="comments">
-  <h2 class="sentence">{{'Testimonies' | translate}}</h2>
-  <ngb-carousel>
+  <h2 *ngIf="_commentService.comments.length > 0" class="sentence">{{'Testimonies' | translate}}</h2>
+  <ngb-carousel *ngIf="_commentService.comments.length > 0">
     <ng-template ngbSlide *ngFor="let auxComment of _commentService.comments">
       <section>
         <strong>
