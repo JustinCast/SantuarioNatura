@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  port: 'http://localhost:5000/api/v1/',
-  imgs: 'http://localhost:5000/'
+  port: 'api/v1/',
+  imgs: ''
 };
 
 /*
