@@ -45,7 +45,4 @@ export class AppComponent {
     this.auth.logout();
   }
 
-  openDevsInfo() {
-    this.dialogManager.openDevsInfo();
-  }
 }
