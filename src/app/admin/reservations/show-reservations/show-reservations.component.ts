@@ -15,7 +15,7 @@ export class ShowReservationsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if(! this._reservation.reservations){
+    if(this._reservation.reservations.length === 0){
       this._reservation.getReservations();
       this._reservation.loading = true;
     }

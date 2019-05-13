@@ -15,8 +15,8 @@ export class AddActivityComponent implements OnInit {
   public activityFG: FormGroup;
   icon = "priority_high";
   images: Array<any> = [];
-  difficulty: Array<string> = ["Easy", "Medium", "Hard"];
-  access: Array<string> = ["By Car", "By Horse", "By Walking"];
+  difficulty: Array<string> = ["Fácil - Easy", "Media - Medium", "Difícil - Hard"];
+  access: Array<string> = ["En carro - By car", "A caballo - By horse", "Caminando - By walking"];
   duration: Array<string> = ["1", "2", "2-5", "5-7", "7+"]
   location: Object;
   rates: Array<Rate>;

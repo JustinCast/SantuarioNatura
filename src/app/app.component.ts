@@ -22,7 +22,7 @@ export class AppComponent {
     private dialogManager: DialogManager,
     public auth: AuthService
   ) {
-    translate.setDefaultLang("en");
+    translate.setDefaultLang("es");
   }
   
   setStep(index: number) {

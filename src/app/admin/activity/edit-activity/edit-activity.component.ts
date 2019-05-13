@@ -13,9 +13,9 @@ import { environment } from "src/environments/environment";
   styleUrls: ["./edit-activity.component.scss"]
 })
 export class EditActivityComponent implements OnInit {
-  difficulty: Array<string> = ["Easy", "Medium", "Hard"];
+  difficulty: Array<string> = ["Fácil - Easy", "Media - Medium", "Difícil - Hard"];
+  access: Array<string> = ["En carro - By car", "A caballo - By horse", "Caminando - By walking"];
   duration: Array<string> = ["1", "2", "2-5", "5-7", "7+"];
-  access: Array<string> = ["By Car", "By Horse", "By Walking"];
   activity: Activity;
   images: Array<FileInterface>;
   env = environment.imgs;

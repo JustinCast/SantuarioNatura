@@ -39,6 +39,7 @@ export class ReservationService {
     this._http.get<Reserve[]>(`${environment.port}getReservations`).subscribe(
       data => {
         this.reservations = data;
+        console.log(data)
         this.loading = false;
       },
       (err: HttpErrorResponse) => this.handleError(err)
