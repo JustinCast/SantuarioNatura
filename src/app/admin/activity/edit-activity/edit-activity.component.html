@@ -46,7 +46,7 @@
     <ng-template ngbSlide *ngFor="let img of activity.images">
       <img src="{{env}}static/images/{{img.filename}}" width="auto" height="auto" class="container imgCarousel" >
       <div class="carousel-caption text-center">
-        <button mat-raised-button color="warn" (click)="deleteImage(img);"><mat-icon>delete</mat-icon></button>
+        <button mat-raised-button color="warn" (click)="deleteImage(img.filename, img.image_id);"><mat-icon>delete</mat-icon></button>
       </div>
     </ng-template>
   </ngb-carousel>

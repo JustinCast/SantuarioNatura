@@ -50,6 +50,6 @@ api.get("/getBestFourActivities", activitiesQueries.getBestFourActivities);
 // images queries
 api.post("/saveImage", imageQueries.saveImage);
 api.get("/getAllImages/:id", imageQueries.getAllImages);
-api.get("/deleteImage/:image_id", imageQueries.deleteImage);
+api.delete("/deleteImage/:image_id", imageQueries.deleteImage);
 
 module.exports = api;

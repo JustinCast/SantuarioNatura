@@ -11,7 +11,6 @@ function getAllImages(req, res, next) {
 
 function saveImage(req, res, next) {
   let db = require("../config/config");
-  console.log(`IMAGE CONTENT: ${JSON.stringify(req.body)}`);
   db.any(
     "SELECT save_image(${path}, ${filename}, ${id_activity}, ${destination}, ${mimetype}, ${encoding}, ${size})",
     {
@@ -35,7 +34,8 @@ function saveImage(req, res, next) {
 function deleteImage(req, res, next) {
   let db = require("../config/config");
   let image_id = req.params.image_id;
-  db.none("SELECT delete_image(${image_id})", {
+  console.log(image_id)
+  db.any("SELECT delete_image(${image_id})", {
     image_id: image_id
   })
     .then(success => {

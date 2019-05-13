@@ -79,7 +79,6 @@ export class ActivityService {
 
   makeImageRequest() {
     this.temporaryFiles.forEach(it => {
-      console.log(it);
       let t = JSON.parse(String(it));
       let body = {
         id_activity: this.lastSavedActivity_id,

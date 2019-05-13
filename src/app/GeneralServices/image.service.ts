@@ -27,14 +27,15 @@ export class ImageService {
   }
 
   deleteImageResource(path: string, image_id: number) {
-    this._http.delete(`${environment.port}deleteImageResource/${path}`)
+    console.log(path);
+    this._http.delete(`${environment.imgs}deleteImageResource/${path}`, )
     .subscribe(
       () => {
         this._http.delete(`${environment.port}deleteImage/${image_id}`).subscribe(
           () => this._ui.openSnackBar('Imagen eliminada con éxito', 'Ok', 2500),
-          (innerErr: HttpErrorResponse) => this.handleError(innerErr))
+          (innerErr: HttpErrorResponse) => {console.log("error on deleteImage"); this.handleError(innerErr)})
       },
-      (err: HttpErrorResponse) => this.handleError(err)
+      (err: HttpErrorResponse) => {console.log("error on deleteImage Resource"); this.handleError(err)}
     )
   }
   handleError(err: HttpErrorResponse) {

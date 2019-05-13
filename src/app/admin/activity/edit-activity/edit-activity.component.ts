@@ -52,8 +52,9 @@ export class EditActivityComponent implements OnInit {
     this._dialog.editRates(this.activity.id);
   }
 
-  deleteImage(img: FileInterface) {
-    this._image.deleteImageResource(img.path, img.image_id);
+  deleteImage(filename, image_id) {
+    this._image.deleteImageResource(filename, image_id);
+    this.activity.images.splice(this.activity.images.findIndex(i => i.image_id =  image_id), 1);
   }
 
   addImages() {

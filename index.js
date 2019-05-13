@@ -80,8 +80,8 @@ function routerConfig() {
       res.json(req.file);
     });
   });
-  app.delete("/api/v1/deleteImageResource", function (req, res) {
-    fs.unlink(req.body.path, function name(err) {
+  app.delete("/deleteImageResource/:path", function (req, res) {
+    fs.unlink(`server/public/images/${req.params.path}`, function name(err) {
       if(err) return console.log(err);
       res.status(200).send(true);
     });
